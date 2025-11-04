@@ -1,4 +1,9 @@
-// app.jsx – Native Spirit (refonte)
+// App.jsx – Native Spirit (version finale, full thème vert)
+// Hypothèses :
+// - Les CSV sont dans /public :
+//     • /NATIVE_SPIRIT_STOCKWEB_NS.csv
+//     • /NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
+// - Le logo blanc est dans /public/NATIVESPIRIT-logo-pastille-blanc.png
 
 import React, { useEffect, useMemo, useState } from "react";
 import {
@@ -6,12 +11,11 @@ import {
   getColorsFor,
   getSizesFor,
   getStock,
-} from "./stockCsvApi.js";          // ← correspond à src/stockCsvsApi.js
+} from "./stockCsvApi.js";
 import { getReappro } from "./reapproCsvApi.js";
 import "./index.css";
 
 export default function App() {
-  // Sélections & données
   const [refs, setRefs] = useState([]);
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
@@ -22,19 +26,17 @@ export default function App() {
   const [stockBySize, setStockBySize] = useState({});
   const [reapproBySize, setReapproBySize] = useState({});
 
-  // États UI
   const [loadingRefs, setLoadingRefs] = useState(false);
   const [loadingFilters, setLoadingFilters] = useState(false);
   const [loadingTable, setLoadingTable] = useState(false);
   const [error, setError] = useState("");
 
-  // Ordre de tri des tailles (inclut 2XS pour NS)
   const sizeOrder = useMemo(
     () => ["2XS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"],
     []
   );
 
-  // 1) Charger les références
+  // 1️⃣ Charger les références
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -51,10 +53,12 @@ export default function App() {
         if (alive) setLoadingRefs(false);
       }
     })();
-    return () => { alive = false; };
+    return () => {
+      alive = false;
+    };
   }, []);
 
-  // 2) Charger les couleurs quand on choisit une référence
+  // 2️⃣ Charger les couleurs quand une ref est choisie
   useEffect(() => {
     if (!selectedRef) {
       setColors([]);
@@ -84,10 +88,13 @@ export default function App() {
         if (alive) setLoadingFilters(false);
       }
     })();
-    return () => { alive = false; };
+
+    return () => {
+      alive = false;
+    };
   }, [selectedRef]);
 
-  // 3) Charger tailles + stocks + réappro quand on choisit une couleur
+  // 3️⃣ Charger tailles + stocks + réappro quand couleur choisie
   useEffect(() => {
     if (!selectedRef || !selectedColor) {
       setSizes([]);
@@ -105,8 +112,10 @@ export default function App() {
         if (!alive) return;
 
         const sorted = [
-          ...sizeOrder.filter(sz => rawSizes.includes(sz)),
-          ...rawSizes.filter(sz => !sizeOrder.includes(sz)).sort((a, b) => a.localeCompare(b)),
+          ...sizeOrder.filter((sz) => rawSizes.includes(sz)),
+          ...rawSizes
+            .filter((sz) => !sizeOrder.includes(sz))
+            .sort((a, b) => a.localeCompare(b)),
         ];
         setSizes(sorted);
 
@@ -119,7 +128,6 @@ export default function App() {
             return { size, stock, reappro };
           })
         );
-        if (!alive) return;
 
         const nextStock = {};
         const nextReappro = {};
@@ -127,38 +135,40 @@ export default function App() {
           nextStock[size] = stock;
           nextReappro[size] = reappro;
         });
+
+        if (!alive) return;
         setStockBySize(nextStock);
         setReapproBySize(nextReappro);
       } catch {
         if (!alive) return;
-        setError("Impossible de charger le tableau des tailles.");
+        setError("Impossible de charger les données de stock.");
       } finally {
         if (alive) setLoadingTable(false);
       }
     })();
 
-    return () => { alive = false; };
+    return () => {
+      alive = false;
+    };
   }, [selectedRef, selectedColor, sizeOrder]);
 
   return (
     <div className="app-container">
-      {/* En-tête */}
       <header className="app-header" aria-label="Native Spirit – Stock Checker">
         <img
           src="/NATIVESPIRIT-logo-pastille-blanc.png"
           alt="Native Spirit"
           className="app-logo"
-          width={220}
-          height={64}
+          width={240}
+          height={240}
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          onError={(e) => { e.currentTarget.style.display = "none"; }}
         />
+        <p className="app-subtitle">native spirit</p>
         <h1 className="app-title">Stock Checker</h1>
       </header>
 
-      {/* Filtres */}
       <div className="filters">
         <div className="filter">
           <label>Référence</label>
@@ -169,7 +179,9 @@ export default function App() {
           >
             <option value="">-- Sélectionner une référence --</option>
             {refs.map((r) => (
-              <option key={r} value={r}>{r}</option>
+              <option key={r} value={r}>
+                {r}
+              </option>
             ))}
           </select>
         </div>
@@ -183,26 +195,20 @@ export default function App() {
           >
             <option value="">-- Sélectionner une couleur --</option>
             {colors.map((c) => (
-              <option key={c} value={c}>{c}</option>
+              <option key={c} value={c}>
+                {c}
+              </option>
             ))}
           </select>
         </div>
       </div>
 
-      {/* Messages d'état */}
-      {error && (
-        <div role="alert" style={{ color: "#b00020", marginBottom: 12 }}>
-          {error}
-        </div>
-      )}
+      {error && <div className="error-message">{error}</div>}
       {(loadingRefs || loadingFilters || loadingTable) && (
-        <div className="center" style={{ margin: "8px 0 12px" }}>
-          Chargement…
-        </div>
+        <div className="loading">Chargement…</div>
       )}
 
-      {/* Tableau résultats */}
-      {sizes.length > 0 ? (
+      {sizes.length > 0 && (
         <table className="results-table">
           <thead>
             <tr>
@@ -217,16 +223,20 @@ export default function App() {
               <tr key={size}>
                 <td>{size}</td>
                 <td className="right">
-                  {Number(stockBySize[size] || 0) > 0 ? stockBySize[size] : "Rupture"}
+                  {Number(stockBySize[size] || 0) > 0
+                    ? stockBySize[size]
+                    : "Rupture"}
                 </td>
-                <td className="center">{reapproBySize[size]?.dateToRec || "-"}</td>
-                <td className="right">{reapproBySize[size]?.quantity ?? "-"}</td>
+                <td className="center">
+                  {reapproBySize[size]?.dateToRec || "-"}
+                </td>
+                <td className="right">
+                  {reapproBySize[size]?.quantity ?? "-"}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
-      ) : (
-        <div className="spacer" />
       )}
     </div>
   );
