@@ -24,17 +24,18 @@
 </html>
 
 
-// =========================
-// main.jsx – Native Spirit
-// =========================
-
+// src/main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css"; // Styles globaux (fond #93BCB4 + Hurme Geometric Sans 4)
+
+// ⚠️ Respecte la casse : si ton fichier s'appelle "App.jsx" → importe "App.jsx"
+// si c'est "app.jsx" → importe "app.jsx"
+import App from "./App.jsx"; 
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+
