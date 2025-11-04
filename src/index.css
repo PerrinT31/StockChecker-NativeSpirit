@@ -1,3 +1,162 @@
+/* =========================
+   index.css – Native Spirit
+   ========================= */
+
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --ns-green: #93BCB4; /* vert doux Native Spirit */
+  --ns-green-dark: #44655E; /* vert profond */
+  --ns-white: #ffffff;
+  --ns-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Background global */
+body {
+  background-color: var(--ns-green);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  min-height: 100vh;
+  color: var(--ns-green-dark);
+}
+
+/* Conteneur principal */
+.app-container {
+  background-color: var(--ns-white);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px var(--ns-shadow);
+  padding: 2rem;
+  width: 90%;
+  max-width: 950px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+
+.app-logo {
+  height: 75px;
+  width: auto;
+}
+
+.app-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 28px;
+  color: var(--ns-green-dark);
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.filter {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--ns-green-dark);
+}
+
+.filter select {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: var(--ns-white);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ns-green-dark);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.filter select:focus {
+  border-color: var(--ns-green-dark);
+  background: #f3f8f7;
+  outline: none;
+}
+
+/* Tableau */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--ns-shadow);
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.8rem 1rem;
+  border: 1px solid #e8e8e8;
+  text-align: left;
+  font-size: 15px;
+}
+
+.results-table th {
+  background-color: #E7F4F2;
+  color: var(--ns-green-dark);
+  font-weight: 700;
+}
+
+.results-table tr:nth-child(even) {
+  background: #f9fbfa;
+}
+
+.results-table td.right {
+  text-align: right;
+}
+
+.results-table td.center {
+  text-align: center;
+}
+
+/* Messages */
+.center {
+  text-align: center;
+  font-weight: 500;
+  color: var(--ns-green-dark);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+  }
+  .filter {
+    width: 100%;
+  }
+  .app-title {
+    font-size: 22px;
+    text-align: center;
+  }
+}
+
 /* === Native Spirit FULL GREEN THEME (override) === */
 
 /* 1) Conteneur sans carte blanche */
@@ -65,3 +224,4 @@ body { padding-top: 40px; }
 @media (max-width: 600px) {
   .app-title { text-align: center; }
 }
+
