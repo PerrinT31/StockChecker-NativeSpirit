@@ -29,6 +29,7 @@ body {
 .app-logo {
   /* === Header sans texte, logo agrandi === */
 /* === Header sans texte, logo x1.5 === */
+/* === Header ajusté, logo petit propre === */
 .app-header {
   display: flex;
   flex-direction: column;
@@ -38,19 +39,18 @@ body {
 }
 
 .app-logo {
-  height: 165px; /* environ x1.5 plus grand */
+  height: 110px; /* taille propre, nette et centrée */
   width: auto;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
-  margin-bottom: 0.8rem;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.25));
+  margin-bottom: 0.5rem;
 }
 
 .app-title {
-  font-size: 36px;
+  font-size: 34px;
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-top: 0.5rem;
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
