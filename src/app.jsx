@@ -32,7 +32,7 @@ export default function App() {
   const [error, setError] = useState("");
 
   const sizeOrder = useMemo(
-    () => ["2XS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"],
+    () => ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"],
     []
   );
 
