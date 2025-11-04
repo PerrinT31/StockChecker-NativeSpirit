@@ -159,8 +159,8 @@ export default function App() {
     src="/NATIVESPIRIT-logo-pastille-blanc.png"
     alt="Native Spirit"
     className="app-logo"
-    width={330}   // doublé visuellement
-    height={330}
+    width={200}   // doublé visuellement
+    height={200}
     loading="eager"
     decoding="async"
     fetchPriority="high"
