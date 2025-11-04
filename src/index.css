@@ -86,13 +86,13 @@ body {
 
 /* En-tête */
 .results-table th {
-  background: #2D3C4B;             /* header uni (sobre) */
+  background: linear-gradient(180deg, #3A4C5C 0%, #2D3C4B 100%);
   color: #ffffff;
   font-weight: 700;
   text-align: left;
   padding: .9rem 1rem;
   font-size: 15px;
-  border-right: 1px solid rgba(255,255,255,.18); /* fines lignes entre colonnes (header) */
+  border-right: 1px solid rgba(255,255,255,.18);
 }
 .results-table th:last-child {
   border-right: none;
