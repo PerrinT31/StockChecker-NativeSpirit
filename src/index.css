@@ -1,156 +1,171 @@
-/* === Thème Native Spirit vert full === */
-body {
-  background: #93BCB4;
-  color: #ffffff;
-  font-family: "Poppins", system-ui, sans-serif;
+/* =========================
+   Native Spirit – Global UI
+   ========================= */
+
+/* Base */
+:root{
+  --ns-bg: #93BCB4;             /* fond de page */
+  --ns-text: #ffffff;           /* texte sur fond vert */
+  --ns-panel: rgba(255,255,255,.15);
+  --ns-panel-border: rgba(255,255,255,.25);
+  --ns-shadow: 0 6px 24px rgba(0,0,0,.18);
+
+  --tbl-border: #e9eef0;
+  --tbl-head:  #E6F1EE;
+  --tbl-alt:   #F9FBFA;
+
+  --ink:  #0B1F1C;              /* texte sur panneaux clairs */
+  --focus: rgba(68,101,94,.28);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+html { scroll-behavior: smooth; }
+
+body{
+  background: var(--ns-bg);
+  color: var(--ns-text);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 3rem 1rem;
 }
 
-/* Conteneur */
-.app-container {
-  background: transparent;
+/* Container */
+.app-container{
+  background: transparent;      /* full-bleed green look */
   width: 100%;
-  max-width: 800px;
+  max-width: 980px;
   text-align: center;
 }
 
-/* === Header avec logo horizontal propre === */
-.app-header {
+/* Header */
+.app-header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
+  gap: .75rem;
+  margin-bottom: 1.6rem;
 }
 
-.app-logo {
-  width: 260px;      /* largeur adaptée à la version horizontale */
-  height: auto;      /* préserve les proportions naturelles */
-  margin-bottom: 0.7rem;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+.app-logo{
+  width: 260px;                 /* logo horizontal, non déformé */
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.25));
 }
 
-.app-title {
-  font-size: 38px;
-  color: #ffffff;
-  font-weight: 700;
+.app-title{
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-top: 0.5rem;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0,0,0,.30);
 }
 
-.app-subtitle {
-  font-size: 14px;
-  color: #ffffff;
-  opacity: 0.9;
-  letter-spacing: 3px;
-  text-transform: lowercase;
-  margin-top: 0.3rem;
-}
-
-/* === Filtres (2 colonnes desktop, 1 colonne mobile) === */
-.filters {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 1.5rem;
-  border-radius: 12px;
+/* Filters – 2 columns desktop, 1 column mobile */
+.filters{
+  background: var(--ns-panel);
+  border: 1px solid var(--ns-panel-border);
+  border-radius: 14px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
+  box-shadow: var(--ns-shadow);
+  padding: 1.2rem;
+  margin: 0 auto 1.2rem;
 }
 
-/* grid 2 colonnes */
-.filters.two-cols {
+.filters.two-cols{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  gap: 1rem 1rem;
 }
 
-/* mobile : on empile */
-@media (max-width: 720px) {
-  .filters.two-cols {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 760px){
+  .filters.two-cols{ grid-template-columns: 1fr; }
 }
 
-.filter {
+.filter{
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-.filter label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.filter label{
   color: #fff;
+  font-weight: 600;
+  margin-bottom: .45rem;
 }
 
-.filter select {
+.filter select{
   width: 100%;
-  padding: 0.8rem;
-  border-radius: 8px;
+  padding: .8rem .9rem;
+  border-radius: 10px;
   border: none;
   background: #ffffff;
-  color: #0B1F1C;
+  color: var(--ink);
   font-weight: 600;
   outline: none;
   transition: box-shadow .2s ease, transform .05s ease;
 }
 
-/* focus/hover soignés */
-.filter select:focus {
-  box-shadow: 0 0 0 4px rgba(68, 101, 94, .25);
-}
+.filter select:focus{ box-shadow: 0 0 0 4px var(--focus); }
+.filter select:hover{ transform: translateY(-1px); }
 
-.filter select:hover {
-  transform: translateY(-1px);
-}
-
-/* === Tableau === */
-.results-table {
-  margin-top: 2rem;
+/* Table */
+.results-table{
   width: 100%;
   border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
+  background: rgba(255,255,255,.96);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  box-shadow: var(--ns-shadow);
+  margin-top: 1.4rem;
 }
 
 .results-table th,
-.results-table td {
-  padding: 0.8rem;
+.results-table td{
+  padding: .85rem .95rem;
+  border-bottom: 1px solid var(--tbl-border);
   text-align: left;
-  color: #0B1F1C;
-  border-bottom: 1px solid #e9eef0;
+  color: var(--ink);
+  font-size: 15px;
 }
 
-.results-table th {
-  background: #E6F1EE;
+.results-table th{
+  background: var(--tbl-head);
   font-weight: 800;
 }
 
-.results-table tr:nth-child(even) {
-  background: #F9FBFA;
+.results-table tr:nth-child(even){ background: var(--tbl-alt); }
+
+.results-table td.right{ text-align: right; }
+.results-table td.center{ text-align: center; }
+
+/* Replenishment details (multi-dates) */
+.reappro-list > div{
+  line-height: 1.35;
+  padding: 2px 0;
 }
 
-.results-table td.right { text-align: right; }
-.results-table td.center { text-align: center; }
+.reappro-list .muted{
+  opacity: .78;
+  font-weight: 600;
+}
 
-/* === États === */
-.error-message {
+/* Status */
+.error-message{
   color: #ffebee;
-  background: rgba(176, 0, 32, 0.6);
-  padding: 0.6rem;
-  border-radius: 6px;
-  margin-top: 1rem;
+  background: rgba(176,0,32,.55);
+  padding: .6rem .8rem;
+  border-radius: 8px;
+  margin-top: .8rem;
 }
 
-.loading {
-  color: #ffffff;
-  margin-top: 1rem;
+.loading{
+  color: #fff;
+  margin-top: .6rem;
   font-style: italic;
 }
+
+.spacer{ height: 1.2rem; }
