@@ -1,171 +1,133 @@
-/* =========================
-   Native Spirit – Global UI
-   ========================= */
-
-/* Base */
-:root{
-  --ns-bg: #93BCB4;             /* fond de page */
-  --ns-text: #ffffff;           /* texte sur fond vert */
-  --ns-panel: rgba(255,255,255,.15);
-  --ns-panel-border: rgba(255,255,255,.25);
-  --ns-shadow: 0 6px 24px rgba(0,0,0,.18);
-
-  --tbl-border: #e9eef0;
-  --tbl-head:  #E6F1EE;
-  --tbl-alt:   #F9FBFA;
-
-  --ink:  #0B1F1C;              /* texte sur panneaux clairs */
-  --focus: rgba(68,101,94,.28);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-html { scroll-behavior: smooth; }
-
-body{
-  background: var(--ns-bg);
-  color: var(--ns-text);
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+/* === Thème Native Spirit blanc / gris foncé === */
+body {
+  background: #ffffff;
+  color: #2D3C4B;
+  font-family: "Poppins", system-ui, sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 3rem 1rem;
 }
 
-/* Container */
-.app-container{
-  background: transparent;      /* full-bleed green look */
+/* Conteneur principal */
+.app-container {
+  background: transparent;
   width: 100%;
-  max-width: 980px;
+  max-width: 900px;
   text-align: center;
 }
 
-/* Header */
-.app-header{
+/* === Header === */
+.app-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .75rem;
-  margin-bottom: 1.6rem;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.app-logo{
-  width: 260px;                 /* logo horizontal, non déformé */
+.app-logo {
+  width: 260px;
   height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,.25));
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
 }
 
-.app-title{
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
+/* === Titre principal === */
+.app-title {
+  font-size: 34px;
+  color: #2D3C4B;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0 3px 10px rgba(0,0,0,.30);
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Filters – 2 columns desktop, 1 column mobile */
-.filters{
-  background: var(--ns-panel);
-  border: 1px solid var(--ns-panel-border);
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  box-shadow: var(--ns-shadow);
-  padding: 1.2rem;
-  margin: 0 auto 1.2rem;
+/* === Filtres === */
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  background: rgba(45, 60, 75, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
 }
 
-.filters.two-cols{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem 1rem;
-}
-
-@media (max-width: 760px){
-  .filters.two-cols{ grid-template-columns: 1fr; }
-}
-
-.filter{
+.filter {
+  flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.filter label {
   text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #2D3C4B;
 }
 
-.filter label{
-  color: #fff;
-  font-weight: 600;
-  margin-bottom: .45rem;
-}
-
-.filter select{
+.filter select {
   width: 100%;
-  padding: .8rem .9rem;
-  border-radius: 10px;
-  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #2D3C4B;
   background: #ffffff;
-  color: var(--ink);
+  color: #2D3C4B;
   font-weight: 600;
   outline: none;
-  transition: box-shadow .2s ease, transform .05s ease;
+  transition: border-color 0.2s ease;
 }
 
-.filter select:focus{ box-shadow: 0 0 0 4px var(--focus); }
-.filter select:hover{ transform: translateY(-1px); }
+.filter select:focus {
+  border-color: #50657a;
+}
 
-/* Table */
-.results-table{
+/* === Tableau === */
+.results-table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(255,255,255,.96);
+  background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--ns-shadow);
-  margin-top: 1.4rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .results-table th,
-.results-table td{
-  padding: .85rem .95rem;
-  border-bottom: 1px solid var(--tbl-border);
+.results-table td {
+  padding: 0.8rem 1rem;
   text-align: left;
-  color: var(--ink);
   font-size: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.results-table th{
-  background: var(--tbl-head);
-  font-weight: 800;
+/* Header du tableau avec dégradé gris foncé */
+.results-table th {
+  background: linear-gradient(90deg, #2D3C4B 0%, #465a70 100%);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
 }
 
-.results-table tr:nth-child(even){ background: var(--tbl-alt); }
-
-.results-table td.right{ text-align: right; }
-.results-table td.center{ text-align: center; }
-
-/* Replenishment details (multi-dates) */
-.reappro-list > div{
-  line-height: 1.35;
-  padding: 2px 0;
+.results-table th.right,
+.results-table td.right {
+  text-align: right;
 }
 
-.reappro-list .muted{
-  opacity: .78;
-  font-weight: 600;
+/* Espacement entre les colonnes Stock et Restock */
+.results-table td:nth-child(3),
+.results-table th:nth-child(3) {
+  padding-left: 2.5rem;
+  border-left: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Status */
-.error-message{
-  color: #ffebee;
-  background: rgba(176,0,32,.55);
-  padding: .6rem .8rem;
-  border-radius: 8px;
-  margin-top: .8rem;
+/* Ajuste un peu l’espace entre Restock et Total incoming qty */
+.results-table td:nth-child(4),
+.results-table th:nth-child(4) {
+  padding-left: 1rem;
 }
 
-.loading{
-  color: #fff;
-  margin-top: .6rem;
-  font-style: italic;
-}
-
-.spacer{ height: 1.2rem; }
+/* Lignes alternées plus douces */
+.results-table tr:nth-child(even) {
