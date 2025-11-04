@@ -137,6 +137,15 @@ body {
 .results-table td.right, .results-table th.right { text-align: right; }
 .results-table td.center, .results-table th.center { text-align: center; }
 
+/* Alignement des chiffres dans les colonnes numériques */
+.results-table td:nth-child(2),
+.results-table td:nth-child(3),
+.results-table td:nth-child(4) {
+  text-align: right;        /* chiffres alignés à droite */
+  font-variant-numeric: tabular-nums; /* alignement parfait même avec des polices proportionnelles */
+  padding-right: 1.2rem;    /* léger espace respirant à droite */
+}
+
 /* Espace supplémentaire avant la colonne Restock (meilleure lisibilité) */
 .results-table td:nth-child(3),
 .results-table th:nth-child(3) {
