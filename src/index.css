@@ -1,161 +1,156 @@
-/* =========================
-   index.css – Native Spirit
-   ========================= */
-
-/* 1) Variables & reset */
-:root{
-  --ns-bg: #93BCB4;         /* fond marque */
-  --ns-text: #0B1F1C;       /* vert profond lisible */
-  --ns-surface: #ffffff;    /* cartes/blocs */
-  --ns-border: rgba(0,0,0,.10);
-  --ns-muted: rgba(0,0,0,.55);
-  --ns-accent: #44655E;     /* hover/contours */
-  --radius: 18px;
-  --shadow-sm: 0 6px 18px rgba(0,0,0,.10);
-  --shadow-md: 0 10px 24px rgba(0,0,0,.12);
+/* === Thème Native Spirit vert full === */
+body {
+  background: #93BCB4;
+  color: #ffffff;
+  font-family: "Poppins", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-html { scroll-behavior: smooth; }
-
-/* 2) Body */
-body{
-  background: var(--ns-bg);
-  color: var(--ns-text);
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Conteneur */
+.app-container {
+  background: transparent;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
 }
 
-/* 3) Container (carte centrale) */
-.app-container{
-  max-width: 1000px;
-  margin: 40px auto 56px;
-  padding: 24px 16px 40px;
-  background: var(--ns-surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-}
-
-/* 4) Header */
-.app-header{
+/* === Header avec logo horizontal propre === */
+.app-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 18px;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-/* Logo non déformé, centré */
-.app-logo{
-  display: block;
-  width: 220px;             /* ajuste si besoin */
-  height: auto;             /* évite tout étirement */
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,.12));
+.app-logo {
+  width: 260px;      /* largeur adaptée à la version horizontale */
+  height: auto;      /* préserve les proportions naturelles */
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
 }
 
-.app-title{
-  font-weight: 800;
-  font-size: 34px;
-  letter-spacing: .5px;
+.app-title {
+  font-size: 38px;
+  color: #ffffff;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--ns-surface);
-  /* On place le titre au-dessus de la carte via un “badge” visuel */
-  position: relative;
-  margin-top: -8px;
-  color: var(--ns-text);
-  text-shadow: 0 2px 0 rgba(255,255,255,.75);
+  letter-spacing: 1.5px;
+  margin-top: 0.5rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* 5) Filtres — 2 colonnes */
-.filters.two-cols{
+.app-subtitle {
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.9;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  margin-top: 0.3rem;
+}
+
+/* === Filtres (2 colonnes desktop, 1 colonne mobile) === */
+.filters {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+/* grille 2 colonnes */
+.filters.two-cols {
   display: grid;
-  grid-template-columns: 1fr 1fr;  /* 2 colonnes égales */
-  gap: 1rem;
-  padding: 18px;
-  background: #F4F7F6;
-  border: 1px solid var(--ns-border);
-  border-radius: 14px;
-  box-shadow: var(--shadow-sm);
-  margin: 10px 0 18px;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
 }
 
-.filter{
+/* mobile : on empile */
+@media (max-width: 720px) {
+  .filters.two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filter {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  text-align: left;
 }
 
-.filter label{
-  font-weight: 700;
-  color: var(--ns-text);
-}
-
-.filter select{
-  width: 100%;
-  padding: .70rem .8rem;
-  font-size: 16px;
+.filter label {
   font-weight: 600;
-  border-radius: 10px;
-  border: 1px solid var(--ns-border);
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.filter select {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
   background: #ffffff;
-  color: var(--ns-text);
+  color: #0B1F1C;
+  font-weight: 600;
   outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease;
+  transition: box-shadow .2s ease, transform .05s ease;
 }
 
-.filter select:focus{
-  border-color: var(--ns-accent);
-  box-shadow: 0 0 0 4px rgba(68,101,94,.15);
+/* focus/hover soignés */
+.filter select:focus {
+  box-shadow: 0 0 0 4px rgba(68, 101, 94, .25);
 }
 
-/* 6) Table des résultats */
-.results-table{
+.filter select:hover {
+  transform: translateY(-1px);
+}
+
+/* === Tableau === */
+.results-table {
+  margin-top: 2rem;
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
 
 .results-table th,
-.results-table td{
-  padding: .80rem .9rem;
-  border: 1px solid #e8e8e8;
-  font-size: 15px;
-}
-
-.results-table th{
-  background: #E6F1EE;       /* vert clair */
-  font-weight: 800;
+.results-table td {
+  padding: 0.8rem;
   text-align: left;
-  color: var(--ns-text);
+  color: #0B1F1C;
+  border-bottom: 1px solid #e9eef0;
 }
 
-.results-table tr:nth-child(even){ background: #F9FBFA; }
-.results-table td.right{ text-align: right; }
-.results-table td.center{ text-align: center; }
-
-/* 7) Messages / spacing */
-.error-message{
-  color: #b00020;
-  font-weight: 600;
-}
-.loading{ color: var(--ns-muted); }
-.spacer{ height: 1.25rem; }
-
-/* 8) Responsive */
-@media (max-width: 900px){
-  .app-container{ margin: 24px 12px 40px; }
+.results-table th {
+  background: #E6F1EE;
+  font-weight: 800;
 }
 
-@media (max-width: 720px){
-  .filters.two-cols{
-    grid-template-columns: 1fr; /* empile les filtres sur mobile */
-  }
-  .app-logo{ width: 180px; }
-  .app-title{ font-size: 28px; text-align: center; }
+.results-table tr:nth-child(even) {
+  background: #F9FBFA;
+}
+
+.results-table td.right { text-align: right; }
+.results-table td.center { text-align: center; }
+
+/* === États === */
+.error-message {
+  color: #ffebee;
+  background: rgba(176, 0, 32, 0.6);
+  padding: 0.6rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.loading {
+  color: #ffffff;
+  margin-top: 1rem;
+  font-style: italic;
 }
