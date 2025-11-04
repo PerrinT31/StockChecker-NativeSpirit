@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import App from "./app.jsx"; // ton fichier s'appelle app.jsx (minuscule)
+import App from "./app.jsx"; // attention à la casse : app.jsx en minuscules
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
