@@ -1,23 +1,16 @@
-// src/App.jsx — Native Spirit Stock Checker (EN, side-by-side filters, full reappro details)
-// Expects CSVs in /public:
-//  • /NATIVE_SPIRIT_STOCKWEB_NS.csv
-//  • /NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
-
+// src/app.jsx — Native Spirit (mise à jour labels & affichages)
 import React, { useEffect, useMemo, useState } from "react";
 import {
   getUniqueRefs,
   getColorsFor,
   getSizesFor,
   getStock,
-} from "./stockCsvApi.js";            // ⚠️ respecte exactement le nom du fichier
+} from "./stockCsvApi.js";
 import { getReappro, getReapproAll } from "./reapproCsvApi.js";
 import "./index.css";
 
-// small safety: trim & normalize spaces
-const trimSpaces = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
-
 export default function App() {
-  // Data
+  // Sélections & données
   const [refs, setRefs] = useState([]);
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
@@ -26,26 +19,22 @@ export default function App() {
   const [selectedColor, setSelectedColor] = useState("");
 
   const [stockBySize, setStockBySize] = useState({});
-  const [reapproBySize, setReapproBySize] = useState({});
-  const [reapproListBySize, setReapproListBySize] = useState({}); // size -> [{dateToRec, quantity}, ...]
+  const [reapproAggBySize, setReapproAggBySize] = useState({});
+  const [reapproListBySize, setReapproListBySize] = useState({});
 
-  // UI states
+  // États UI
   const [loadingRefs, setLoadingRefs] = useState(false);
   const [loadingFilters, setLoadingFilters] = useState(false);
   const [loadingTable, setLoadingTable] = useState(false);
   const [error, setError] = useState("");
 
-  // Safe values (avoid trailing/double-spaces mismatches)
-  const safeRef = useMemo(() => trimSpaces(selectedRef), [selectedRef]);
-  const safeColor = useMemo(() => trimSpaces(selectedColor), [selectedColor]);
-
-  // Size order (Native Spirit)
+  // Ordre de tri des tailles (inclut 2XS pour NS)
   const sizeOrder = useMemo(
     () => ["2XS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL", "6XL"],
     []
   );
 
-  // 1) Load references
+  // 1) Charger les références
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -65,29 +54,30 @@ export default function App() {
     return () => { alive = false; };
   }, []);
 
-  // 2) When selecting a reference -> load colors
+  // 2) Quand on choisit une référence → charger les couleurs
   useEffect(() => {
-    if (!safeRef) {
+    if (!selectedRef) {
       setColors([]);
       setSelectedColor("");
       setSizes([]);
       setStockBySize({});
-      setReapproBySize({});
+      setReapproAggBySize({});
       setReapproListBySize({});
       return;
     }
+
     let alive = true;
     (async () => {
       setLoadingFilters(true);
       setError("");
       try {
-        const cols = await getColorsFor(safeRef);
+        const cols = await getColorsFor(selectedRef);
         if (!alive) return;
         setColors(cols);
         setSelectedColor("");
         setSizes([]);
         setStockBySize({});
-        setReapproBySize({});
+        setReapproAggBySize({});
         setReapproListBySize({});
       } catch {
         if (!alive) return;
@@ -97,68 +87,72 @@ export default function App() {
       }
     })();
     return () => { alive = false; };
-  }, [safeRef]);
+  }, [selectedRef]);
 
-  // 3) When selecting a color -> load sizes, stock & replenishment (incl. all dates)
+  // 3) Quand on choisit une couleur → charger tailles + stocks + réappro
   useEffect(() => {
-    if (!safeRef || !safeColor) {
+    if (!selectedRef || !selectedColor) {
       setSizes([]);
       setStockBySize({});
-      setReapproBySize({});
+      setReapproAggBySize({});
       setReapproListBySize({});
       return;
     }
+
     let alive = true;
     (async () => {
       setLoadingTable(true);
       setError("");
       try {
-        const rawSizes = await getSizesFor(safeRef, safeColor);
+        const rawSizes = await getSizesFor(selectedRef, selectedColor);
         if (!alive) return;
 
+        // Tri custom : tailles connues d'abord, puis alpha
         const sorted = [
           ...sizeOrder.filter((sz) => rawSizes.includes(sz)),
-          ...rawSizes
-            .filter((sz) => !sizeOrder.includes(sz))
-            .sort((a, b) => a.localeCompare(b)),
+          ...rawSizes.filter((sz) => !sizeOrder.includes(sz)).sort((a, b) => a.localeCompare(b)),
         ];
         setSizes(sorted);
 
+        // Charger stock + réappro (agrégé + liste) par taille
         const results = await Promise.all(
           sorted.map(async (size) => {
             const [stock, reapproAgg, reapproAll] = await Promise.all([
-              getStock(safeRef, safeColor, size),     // number
-              getReappro(safeRef, safeColor, size),   // { dateToRec, quantity } (aggregated)
-              getReapproAll(safeRef, safeColor, size) // [{ dateToRec, quantity }, ...]
+              getStock(selectedRef, selectedColor, size),
+              getReappro(selectedRef, selectedColor, size),
+              // si getReapproAll n'est pas dispo pour une raison X, on sécurise :
+              (async () => {
+                try { return await getReapproAll(selectedRef, selectedColor, size); }
+                catch { return []; }
+              })(),
             ]);
-            return { size, stock, reapproAgg, reapproAll };
+            return { size, stock, reapproAgg, reapproAll: Array.isArray(reapproAll) ? reapproAll : [] };
           })
         );
+        if (!alive) return;
 
         const nextStock = {};
-        const nextReappro = {};
-        const nextReapproList = {};
+        const nextAgg = {};
+        const nextList = {};
         results.forEach(({ size, stock, reapproAgg, reapproAll }) => {
-          nextStock[size] = stock;
-          nextReappro[size] = reapproAgg;
-          nextReapproList[size] = Array.isArray(reapproAll) ? reapproAll : [];
+          nextStock[size] = Number(stock) || 0;
+          if (reapproAgg) nextAgg[size] = reapproAgg;
+          nextList[size] = reapproAll;
         });
 
-        if (!alive) return;
         setStockBySize(nextStock);
-        setReapproBySize(nextReappro);
-        setReapproListBySize(nextReapproList);
-
-        if (!sorted.length) setError("No size found for this Reference / Colour.");
+        setReapproAggBySize(nextAgg);
+        setReapproListBySize(nextList);
       } catch {
         if (!alive) return;
-        setError("Unable to load size table.");
+        setError("Unable to load sizes/stock/restock data.");
       } finally {
         if (alive) setLoadingTable(false);
       }
     })();
+
     return () => { alive = false; };
-  }, [safeRef, safeColor, sizeOrder]);
+  }, [selectedRef, selectedColor, sizeOrder]);
 
   return (
     <div className="app-container">
@@ -168,21 +162,23 @@ export default function App() {
           src="/NATIVESPIRIT-logo-blanc-fond-transparent.png"
           alt="Native Spirit"
           className="app-logo"
+          width={260}
+          height="auto"
           loading="eager"
           decoding="async"
           fetchPriority="high"
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
         />
-        <h1 className="app-title">Stock Checker</h1>
       </header>
 
-      {/* Filters (two columns) */}
+      {/* Filtres */}
       <div className="filters two-cols">
         <div className="filter">
           <label>Reference</label>
           <select
             value={selectedRef}
-            onChange={(e) => setSelectedRef(trimSpaces(e.target.value))}
-            disabled={!refs.length || loadingRefs}
+            onChange={(e) => setSelectedRef(e.target.value)}
+            disabled={loadingRefs}
           >
             <option value="">-- Select reference --</option>
             {refs.map((r) => (
@@ -195,7 +191,7 @@ export default function App() {
           <label>Colour</label>
           <select
             value={selectedColor}
-            onChange={(e) => setSelectedColor(trimSpaces(e.target.value))}
+            onChange={(e) => setSelectedColor(e.target.value)}
             disabled={!colors.length || loadingFilters}
           >
             <option value="">-- Select colour --</option>
@@ -206,62 +202,71 @@ export default function App() {
         </div>
       </div>
 
-      {/* Status messages */}
-      {error && (
-        <div role="alert" className="error-message" style={{ marginTop: 12 }}>
-          {error}
-        </div>
-      )}
+      {/* Messages d'état */}
+      {error && <div className="error-message" role="alert">{error}</div>}
       {(loadingRefs || loadingFilters || loadingTable) && (
-        <div className="loading" style={{ margin: "8px 0 12px" }}>
-          Loading…
-        </div>
+        <div className="loading">Loading…</div>
       )}
 
-      {/* Results table */}
-      {safeRef && safeColor ? (
+      {/* Tableau résultats */}
+      {sizes.length > 0 ? (
         <table className="results-table">
           <thead>
             <tr>
               <th>Size</th>
-              <th>Stock</th>
-              <th>Restock</th>
-              <th>Total incoming qty</th>
+              <th className="right">Stock</th>
+              <th>Restock (Date)</th>
+              <th className="right">Total incoming qty</th>
             </tr>
           </thead>
           <tbody>
-            {sizes.length ? (
-              sizes.map((size) => {
-                const list = reapproListBySize[size] || [];
-                const totalQty = reapproBySize[size]?.quantity ?? "-";
-                return (
-                  <tr key={size}>
-                    <td>{size}</td>
-                    <td className="right">
-                      {Number(stockBySize[size] || 0) > 0 ? stockBySize[size] : "Out of stock"}
-                    </td>
-                    <td className="center">
-                      {list.length ? (
-                        <div className="reappro-list">
-                          {list.map((r, i) => (
-                            <div key={`${r.dateToRec}-${i}`}>
-                              {r.dateToRec} <span className="muted">({r.quantity})</span>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        "-"
-                      )}
-                    </td>
-                    <td className="right">{totalQty}</td>
-                  </tr>
-                );
-              })
-            ) : (
-              <tr>
-                <td colSpan={4} className="center">No data for this selection.</td>
-              </tr>
-            )}
+            {sizes.map((size) => {
+              const stock = Number(stockBySize[size] || 0);
+              const agg = reapproAggBySize[size] || null;
+              const list = reapproListBySize[size] || [];
+
+              // Total qty = somme de la liste si dispo, sinon agrégé
+              const totalIncoming = list.length
+                ? list.reduce((s, r) => s + (Number(r.quantity) || 0), 0)
+                : (agg?.quantity ?? 0);
+
+              return (
+                <tr key={size}>
+                  <td>{size}</td>
+
+                  {/* Stock aligné à droite, avec "Out of stock" si zéro */}
+                  <td className="right">
+                    {stock > 0 ? stock : "Out of stock"}
+                  </td>
+
+                  {/* Restock : quantité d’abord, puis date entre parenthèses */}
+                  <td>
+                    {list.length > 0 ? (
+                      <div className="reappro-list">
+                        {list.map((r, idx) => (
+                          <div key={idx}>
+                            <span className="muted">
+                              {Number(r.quantity) || 0} ({r.dateToRec || "-"})
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : agg ? (
+                      <span className="muted">
+                        {(Number(agg.quantity) || 0)} ({agg.dateToRec || "-"})
+                      </span>
+                    ) : (
+                      "-"
+                    )}
+                  </td>
+
+                  {/* Total incoming qty aligné à droite */}
+                  <td className="right">
+                    {totalIncoming > 0 ? totalIncoming : "-"}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       ) : (
