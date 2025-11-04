@@ -202,33 +202,32 @@ export default function App() {
 
       {sizes.length > 0 && (
         <table className="results-table">
-          <thead>
-            <tr>
-              <th>Taille</th>
-              <th>Stock</th>
-              <th>Réappro (Date)</th>
-              <th>Qté entrante</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sizes.map((size) => (
-              <tr key={size}>
-                <td>{size}</td>
-                <td className="right">
-                  {Number(stockBySize[size] || 0) > 0
-                    ? stockBySize[size]
-                    : "Rupture"}
-                </td>
-                <td className="center">
-                  {reapproBySize[size]?.dateToRec || "-"}
-                </td>
-                <td className="right">
-                  {reapproBySize[size]?.quantity ?? "-"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Stock</th>
+      <th>Replenishment (Date)</th>
+      <th>Qty Incoming</th>
+    </tr>
+  </thead>
+  <tbody>
+    {sizes.map((s) => {
+      const key = `${selectedRef}::${selectedColor}::${s}`;
+      const stock = stockData[key]?.stock ?? 0;
+      const reappro = stockData[key]?.reappro ?? null;
+      return (
+        <tr key={s}>
+          <td>{s}</td>
+          <td className={stock <= 0 ? "out" : ""}>
+            {stock > 0 ? stock : "Out of stock"}
+          </td>
+          <td>{reappro?.dateToRec || "-"}</td>
+          <td>{reappro?.quantity || "-"}</td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table>
       )}
     </div>
   );
