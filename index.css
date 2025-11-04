@@ -1,0 +1,135 @@
+/* =========================
+   index.css – Native Spirit
+   ========================= */
+
+/* 1️⃣ Reset & global */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #93BCB4; /* Couleur de fond Native Spirit */
+  font-family: "Hurme Geometric Sans 4", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0B1F1C; /* Vert profond, lisible sur fond clair */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2️⃣ Conteneur */
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  position: relative;
+  z-index: 0;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* 3️⃣ Header */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+.app-logo {
+  height: 68px;
+  width: auto;
+}
+.app-title {
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #0B1F1C; /* Couleur texte principale */
+}
+
+/* 4️⃣ Filtres */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+.filter {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+}
+.filter label {
+  margin-bottom: .35rem;
+  font-weight: 600;
+  color: #44655E; /* Teinte verte plus foncée */
+}
+.filter select {
+  padding: .6rem .7rem;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.15);
+  background: #ffffff;
+  color: #0B1F1C;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.filter select:focus {
+  border-color: #44655E;
+}
+
+/* 5️⃣ Tableau */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  position: relative;
+  z-index: 1;
+}
+.results-table th,
+.results-table td {
+  padding: .75rem .9rem;
+  border: 1px solid #e8e8e8;
+  font-size: 15px;
+}
+.results-table th {
+  background: #E6F1EE; /* Vert clair apaisant */
+  font-weight: 700;
+  text-align: left;
+  color: #0B1F1C;
+}
+.results-table tr:nth-child(even) { background: #F9FBFA; }
+.results-table td.right { text-align: right; }
+.results-table td.center { text-align: center; }
+
+/* 6️⃣ Espacement final */
+.spacer { height: 1.5rem; }
+
+/* 7️⃣ Responsive */
+@media (max-width: 600px) {
+  .filters { flex-direction: column; }
+  .filter { width: 100%; }
+  .app-title { font-size: 22px; text-align: center; }
+}
+
+/* 8️⃣ Font-face : Hurme Geometric Sans 4 */
+@font-face {
+  font-family: "Hurme Geometric Sans 4";
+  src: url("/fonts/HurmeGeometricSans4-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Hurme Geometric Sans 4";
+  src: url("/fonts/HurmeGeometricSans4-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
