@@ -1,45 +1,45 @@
-// reapproCsvApi.js – Native Spirit
-// Compatible avec entêtes : "DATE TO RECEIVE", "QUANTITY", etc.
-// Source attendue dans /public : NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
+// src/reapproCsvApi.js — Native Spirit
+// CSV attendu dans /public : NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
+// -> gère ; ou , comme séparateur, normalise ref/couleur/taille, et expose :
+//    - getReapproAll(ref, color, size) -> [{ dateToRec, quantity }, ...] (trié par date)
+//    - getReappro(ref, color, size)    -> { dateToRec, quantity } (agrégé, rétro-compat)
 
-// Utiliser encodeURI pour gérer l'espace et (2) dans le nom du fichier
 export const REAPPRO_CSV_URL = encodeURI("/NATIVE_SPIRIT_REAPPROWEB_NS (2).csv");
 
 let _cache = null;
 
 // ---------- Normalisations ----------
-const norm = (s) => (s ?? "").trim();
+const norm = (s) => (s ?? "").toString().trim();
 
-// IB220A/AX -> IB220 | NS221A -> NS221 (générique)
+// Ex: NS221A -> NS221
 const toBaseRef = (ref) => {
   const m = String(ref).trim().match(/^([A-Za-z]+\d+)/);
   return m ? m[1] : String(ref).trim();
 };
 
-// couleur -> clé normalisée (sans accents/espaces)
+// couleur -> clé normalisée (enlève accents/espaces/ponctuations)
 const toColorKey = (s) =>
   norm(s)
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "");
 
+// Alias tailles (harmonise 2XL -> XXL, etc.)
 const SIZE_ALIASES = new Map([
-  // ✅ Canonique NS : "2XS"
-  ["2XS", "2XS"], ["XXS", "2XS"],
-
+  ["2XS", "XXS"], ["XXS", "XXS"],
   ["XS", "XS"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"],
-
-  // ✅ Canonique adulte : "XXL"
-  ["2XL", "XXL"], ["XXL", "XXL"],
-  ["3XL", "3XL"], ["4XL", "4XL"], ["5XL", "5XL"], ["6XL", "6XL"],
+  ["2XL", "XXL"], ["XXL", "XXL"], ["3XL", "3XL"], ["4XL", "4XL"],
+  ["5XL", "5XL"], ["6XL", "6XL"],
 ]);
-
 const normSize = (s) => {
   const up = norm(s).toUpperCase().replace(/\s+/g, "");
   return SIZE_ALIASES.get(up) || up;
 };
 
-// ---------- Helpers d’entêtes ----------
+// ---------- Helpers entêtes & split ----------
+const contains = (needle) => (h) => h.includes(needle);
+const equals   = (needle) => (h) => h === needle;
+
 function findCol(header, testers) {
   for (let i = 0; i < header.length; i++) {
     const h = header[i];
@@ -47,12 +47,9 @@ function findCol(header, testers) {
   }
   return -1;
 }
-const contains = (needle) => (h) => h.includes(needle);
-const equals = (needle) => (h) => h === needle;
 
-// ---------- Parsing générique (délimiteur ; ou ,) ----------
+// CSV simples internes : autorise ; ou ,
 function splitSmart(line) {
-  // CSV simple des exports internes (sans guillemets imbriqués)
   if (line.includes(";")) return line.split(";");
   return line.split(",");
 }
@@ -66,13 +63,16 @@ export async function loadReappro() {
   const text = await res.text();
 
   const lines = text.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
-  if (!lines.length) return [];
+  if (!lines.length) {
+    _cache = [];
+    return _cache;
+  }
 
   // Header en minuscules sans espaces multiples
   const header = splitSmart(lines[0])
     .map((h) => h.trim().toLowerCase().replace(/\s+/g, " "));
 
-  // Détection des colonnes avec tolérance
+  // Détection tolérante
   const idx = {
     ref: findCol(header, [
       equals("ref"), equals("reference"), equals("référence"), contains("ref"),
@@ -84,13 +84,8 @@ export async function loadReappro() {
       equals("size"), equals("taille"), contains("size"),
     ]),
     date: findCol(header, [
-      equals("date to receive"),
-      equals("date_to_receive"),
-      equals("datetorec"),
-      contains("date to receive"),
-      contains("date_to_receive"),
-      contains("datetorec"),
-      // fallback : tout header qui contient "date" + ("receive" ou "rec")
+      equals("date to receive"), equals("date_to_receive"), equals("datetorec"),
+      contains("date to receive"), contains("date_to_receive"), contains("datetorec"),
       (h) => h.includes("date") && (h.includes("receive") || h.includes("rec")),
     ]),
     qty: findCol(header, [
@@ -118,23 +113,43 @@ export async function loadReappro() {
   return _cache;
 }
 
-/** Renvoie { dateToRec, quantity } ou null pour baseRef+color+size (tolérant aux variantes) */
-export async function getReappro(ref, color, size) {
+/** Liste détaillée des réassorts pour baseRef+color+size
+ *  @returns [{ dateToRec: string, quantity: number }, ...] (trié par date asc, "-" en dernier)
+ */
+export async function getReapproAll(ref, color, size) {
   const baseRef  = toBaseRef(ref);
   const colorKey = toColorKey(color);
   const sizeKey  = normSize(size);
 
   const data = await loadReappro();
-
-  const matches = data.filter(
+  const rows = data.filter(
     (r) => r.baseRef === baseRef && r.colorKey === colorKey && r.size === sizeKey
   );
+  if (!rows.length) return [];
 
-  if (!matches.length) return null;
+  // Agrège par date (si plusieurs lignes pour la même date)
+  const byDate = new Map();
+  for (const r of rows) {
+    const d = r.dateToRec && r.dateToRec !== "-" ? r.dateToRec : "-";
+    byDate.set(d, (byDate.get(d) || 0) + (r.quantity || 0));
+  }
 
-  // Agrège les quantités et prend une date non vide (la première trouvée)
-  const totalQty = matches.reduce((sum, r) => sum + (r.quantity || 0), 0);
-  const date = matches.find((r) => r.dateToRec && r.dateToRec !== "-")?.dateToRec || "-";
+  const list = [...byDate.entries()]
+    .map(([dateToRec, quantity]) => ({ dateToRec, quantity }))
+    .sort((a, b) => {
+      if (a.dateToRec === "-" && b.dateToRec !== "-") return 1;
+      if (b.dateToRec === "-" && a.dateToRec !== "-") return -1;
+      return String(a.dateToRec).localeCompare(String(b.dateToRec));
+    });
 
-  return { dateToRec: date, quantity: totalQty };
+  return list;
+}
+
+/** Version agrégée (compat) : total + première date non vide trouvée */
+export async function getReappro(ref, color, size) {
+  const list = await getReapproAll(ref, color, size);
+  if (!list.length) return null;
+  const totalQty = list.reduce((s, r) => s + (r.quantity || 0), 0);
+  const firstDate = list.find((r) => r.dateToRec && r.dateToRec !== "-")?.dateToRec || "-";
+  return { dateToRec: firstDate, quantity: totalQty };
 }
