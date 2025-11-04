@@ -226,7 +226,7 @@ export default function App() {
               <th>Size</th>
               <th>Stock</th>
               <th>Replenishment (Date)</th>
-              <th>Qty Incoming</th>
+              <th>Qty Total Incoming</th>
             </tr>
           </thead>
           <tbody>
