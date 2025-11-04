@@ -155,20 +155,18 @@ export default function App() {
   return (
     <div className="app-container">
       <header className="app-header" aria-label="Native Spirit – Stock Checker">
-        <img
-          src="/NATIVESPIRIT-logo-pastille-blanc.png"
-          alt="Native Spirit"
-          className="app-logo"
-          width={240}
-          height={240}
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
-        <p className="app-subtitle">native spirit</p>
-        <h1 className="app-title">Stock Checker</h1>
-      </header>
-
+  <img
+    src="/NATIVESPIRIT-logo-pastille-blanc.png"
+    alt="Native Spirit"
+    className="app-logo"
+    width={480}   // doublé visuellement
+    height={480}
+    loading="eager"
+    decoding="async"
+    fetchPriority="high"
+  />
+  <h1 className="app-title">Stock Checker</h1>
+</header>
       <div className="filters">
         <div className="filter">
           <label>Référence</label>
