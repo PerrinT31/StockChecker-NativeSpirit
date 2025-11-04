@@ -91,7 +91,7 @@ export default function App() {
         setReapproListBySize({});
       } catch {
         if (!alive) return;
-        setError("Unable to load colors for this reference.");
+        setError("Unable to load colours for this reference.");
       } finally {
         if (alive) setLoadingFilters(false);
       }
@@ -149,7 +149,7 @@ export default function App() {
         setReapproBySize(nextReappro);
         setReapproListBySize(nextReapproList);
 
-        if (!sorted.length) setError("No size found for this Reference / Color.");
+        if (!sorted.length) setError("No size found for this Reference / Colour.");
       } catch {
         if (!alive) return;
         setError("Unable to load size table.");
@@ -192,13 +192,13 @@ export default function App() {
         </div>
 
         <div className="filter">
-          <label>Color</label>
+          <label>Colour</label>
           <select
             value={selectedColor}
             onChange={(e) => setSelectedColor(trimSpaces(e.target.value))}
             disabled={!colors.length || loadingFilters}
           >
-            <option value="">-- Select color --</option>
+            <option value="">-- Select colour --</option>
             {colors.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
@@ -225,8 +225,8 @@ export default function App() {
             <tr>
               <th>Size</th>
               <th>Stock</th>
-              <th>Replenishment (Date)</th>
-              <th>Qty Total Incoming</th>
+              <th>Restock</th>
+              <th>Total incoming qty</th>
             </tr>
           </thead>
           <tbody>
