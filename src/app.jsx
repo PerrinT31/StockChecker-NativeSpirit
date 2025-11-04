@@ -1,10 +1,4 @@
-// App.jsx – Native Spirit (refonte)
-// Hypothèses :
-//  - Les CSV sont placés dans /public :
-//      • /NATIVE_SPIRIT_STOCKWEB_NS.csv
-//      • /NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
-//  - Le logo est dans /public/NATIVESPIRIT-logo-pastille-blanc.png
-//  - Les APIs utilitaires existent : stockCsvApi.js & reapproCsvApi.js (mêmes signatures)
+// app.jsx – Native Spirit (refonte)
 
 import React, { useEffect, useMemo, useState } from "react";
 import {
@@ -12,7 +6,7 @@ import {
   getColorsFor,
   getSizesFor,
   getStock,
-} from "./stockCsvApi.js";
+} from "./stockCsvsapi.js";          // ← correspond à src/stockCsvsapi.js
 import { getReappro } from "./reapproCsvApi.js";
 import "./index.css";
 
@@ -36,18 +30,7 @@ export default function App() {
 
   // Ordre de tri des tailles (inclut 2XS pour NS)
   const sizeOrder = useMemo(
-    () => [
-      "2XS",
-      "XS",
-      "S",
-      "M",
-      "L",
-      "XL",
-      "XXL",
-      "3XL",
-      "4XL",
-      "5XL",
-    ],
+    () => ["2XS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"],
     []
   );
 
@@ -61,19 +44,17 @@ export default function App() {
         const list = await getUniqueRefs();
         if (!alive) return;
         setRefs(list);
-      } catch (e) {
+      } catch {
         if (!alive) return;
         setError("Impossible de charger les références.");
       } finally {
         if (alive) setLoadingRefs(false);
       }
     })();
-    return () => {
-      alive = false;
-    };
+    return () => { alive = false; };
   }, []);
 
-  // 2) Quand on choisit une référence → charger les couleurs
+  // 2) Charger les couleurs quand on choisit une référence
   useEffect(() => {
     if (!selectedRef) {
       setColors([]);
@@ -96,19 +77,17 @@ export default function App() {
         setSizes([]);
         setStockBySize({});
         setReapproBySize({});
-      } catch (e) {
+      } catch {
         if (!alive) return;
         setError("Impossible de charger les couleurs pour cette référence.");
       } finally {
         if (alive) setLoadingFilters(false);
       }
     })();
-    return () => {
-      alive = false;
-    };
+    return () => { alive = false; };
   }, [selectedRef]);
 
-  // 3) Quand on choisit une couleur → charger tailles + stocks + réappro
+  // 3) Charger tailles + stocks + réappro quand on choisit une couleur
   useEffect(() => {
     if (!selectedRef || !selectedColor) {
       setSizes([]);
@@ -125,16 +104,12 @@ export default function App() {
         const rawSizes = await getSizesFor(selectedRef, selectedColor);
         if (!alive) return;
 
-        // Tri custom : tailles connues d'abord, puis le reste (ordre alphabétique)
         const sorted = [
-          ...sizeOrder.filter((sz) => rawSizes.includes(sz)),
-          ...rawSizes
-            .filter((sz) => !sizeOrder.includes(sz))
-            .sort((a, b) => a.localeCompare(b)),
+          ...sizeOrder.filter(sz => rawSizes.includes(sz)),
+          ...rawSizes.filter(sz => !sizeOrder.includes(sz)).sort((a, b) => a.localeCompare(b)),
         ];
         setSizes(sorted);
 
-        // Charger stock + réappro par taille
         const results = await Promise.all(
           sorted.map(async (size) => {
             const [stock, reappro] = await Promise.all([
@@ -154,7 +129,7 @@ export default function App() {
         });
         setStockBySize(nextStock);
         setReapproBySize(nextReappro);
-      } catch (e) {
+      } catch {
         if (!alive) return;
         setError("Impossible de charger le tableau des tailles.");
       } finally {
@@ -162,14 +137,12 @@ export default function App() {
       }
     })();
 
-    return () => {
-      alive = false;
-    };
+    return () => { alive = false; };
   }, [selectedRef, selectedColor, sizeOrder]);
 
   return (
     <div className="app-container">
-      {/* En‑tête */}
+      {/* En-tête */}
       <header className="app-header" aria-label="Native Spirit – Stock Checker">
         <img
           src="/NATIVESPIRIT-logo-pastille-blanc.png"
@@ -180,9 +153,7 @@ export default function App() {
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          onError={(e) => {
-            e.currentTarget.style.display = "none";
-          }}
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
         />
         <h1 className="app-title">Stock Checker</h1>
       </header>
@@ -198,9 +169,7 @@ export default function App() {
           >
             <option value="">-- Sélectionner une référence --</option>
             {refs.map((r) => (
-              <option key={r} value={r}>
-                {r}
-              </option>
+              <option key={r} value={r}>{r}</option>
             ))}
           </select>
         </div>
@@ -214,9 +183,7 @@ export default function App() {
           >
             <option value="">-- Sélectionner une couleur --</option>
             {colors.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
+              <option key={c} value={c}>{c}</option>
             ))}
           </select>
         </div>
@@ -250,16 +217,10 @@ export default function App() {
               <tr key={size}>
                 <td>{size}</td>
                 <td className="right">
-                  {Number(stockBySize[size] || 0) > 0
-                    ? stockBySize[size]
-                    : "Rupture"}
+                  {Number(stockBySize[size] || 0) > 0 ? stockBySize[size] : "Rupture"}
                 </td>
-                <td className="center">
-                  {reapproBySize[size]?.dateToRec || "-"}
-                </td>
-                <td className="right">
-                  {reapproBySize[size]?.quantity ?? "-"}
-                </td>
+                <td className="center">{reapproBySize[size]?.dateToRec || "-"}</td>
+                <td className="right">{reapproBySize[size]?.quantity ?? "-"}</td>
               </tr>
             ))}
           </tbody>
@@ -270,4 +231,3 @@ export default function App() {
     </div>
   );
 }
-
