@@ -132,3 +132,17 @@ body {
   margin-top: 1rem;
   font-style: italic;
 }
+
+/* Two filters side-by-side */
+.filters.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 colonnes */
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .filters.two-cols {
+    grid-template-columns: 1fr;   /* empile sur mobile */
+  }
+}
+
