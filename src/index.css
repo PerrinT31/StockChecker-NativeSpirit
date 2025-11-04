@@ -17,7 +17,7 @@ body {
   text-align: center;
 }
 
-/* Header */
+/* === Header avec nouveau logo transparent === */
 .app-header {
   display: flex;
   flex-direction: column;
@@ -27,22 +27,10 @@ body {
 }
 
 .app-logo {
-  /* === Header sans texte, logo agrandi === */
-/* === Header sans texte, logo x1.5 === */
-/* === Header ajusté, logo petit propre === */
-.app-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.app-logo {
-  height: 110px; /* taille propre, nette et centrée */
+  height: 100px;
   width: auto;
-  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.25));
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
 }
 
 .app-title {
@@ -51,7 +39,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
 }
 
 }
