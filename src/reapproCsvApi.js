@@ -1,8 +1,9 @@
 // src/reapproCsvApi.js — Native Spirit
 // CSV attendu dans /public : NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
-// -> gère ; ou , comme séparateur, normalise ref/couleur/taille, et expose :
-//    - getReapproAll(ref, color, size) -> [{ dateToRec, quantity }, ...] (trié par date)
-//    - getReappro(ref, color, size)    -> { dateToRec, quantity } (agrégé, rétro-compat)
+// Expose :
+//   - loadReappro()
+//   - getReapproAll(ref, color, size) -> [{ dateToRec, quantity }, ...]
+//   - getReappro(ref, color, size)    -> { dateToRec, quantity } (agrégé)
 
 export const REAPPRO_CSV_URL = encodeURI("/NATIVE_SPIRIT_REAPPROWEB_NS (2).csv");
 
@@ -17,7 +18,7 @@ const toBaseRef = (ref) => {
   return m ? m[1] : String(ref).trim();
 };
 
-// couleur -> clé normalisée (enlève accents/espaces/ponctuations)
+// couleur -> clé normalisée (sans accents/espaces/ponctuations)
 const toColorKey = (s) =>
   norm(s)
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
