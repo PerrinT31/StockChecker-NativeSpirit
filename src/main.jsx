@@ -28,9 +28,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// ⚠️ Respecte la casse : si ton fichier s'appelle "App.jsx" → importe "App.jsx"
-// si c'est "app.jsx" → importe "app.jsx"
-import App from "./App.jsx"; 
+import App from "./app.jsx";   // ⬅️ casse respectée (app.jsx)
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -38,4 +36,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
 
