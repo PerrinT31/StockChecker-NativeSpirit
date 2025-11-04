@@ -24,10 +24,14 @@ const toColorKey = (s) =>
     .replace(/[^a-z0-9]/g, "");
 
 const SIZE_ALIASES = new Map([
-  ["2XS", "XXS"], ["XXS", "XXS"],
+  // ✅ Canonique NS : "2XS"
+  ["2XS", "2XS"], ["XXS", "2XS"],
+
   ["XS", "XS"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"],
-  ["2XL", "XXL"], ["XXL", "XXL"], ["3XL", "3XL"], ["4XL", "4XL"],
-  ["5XL", "5XL"], ["6XL", "6XL"],
+
+  // ✅ Canonique adulte : "XXL"
+  ["2XL", "XXL"], ["XXL", "XXL"],
+  ["3XL", "3XL"], ["4XL", "4XL"], ["5XL", "5XL"], ["6XL", "6XL"],
 ]);
 
 const normSize = (s) => {
