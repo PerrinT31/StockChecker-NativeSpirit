@@ -32,7 +32,7 @@ export default function App() {
   const [error, setError] = useState("");
 
   const sizeOrder = useMemo(
-    () => ["2XS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"],
+    () => ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"],
     []
   );
 
@@ -166,38 +166,34 @@ export default function App() {
   <h1 className="app-title">Stock Checker</h1>
 </header>
       <div className="filters">
-        <div className="filter">
-          <label>Référence</label>
-          <select
-            value={selectedRef}
-            onChange={(e) => setSelectedRef(e.target.value)}
-            disabled={loadingRefs}
-          >
-            <option value="">-- Sélectionner une référence --</option>
-            {refs.map((r) => (
-              <option key={r} value={r}>
-                {r}
-              </option>
-            ))}
-          </select>
-        </div>
+  <div className="filter">
+    <label>Reference</label>
+    <select
+      value={selectedRef}
+      onChange={(e) => setSelectedRef(e.target.value)}
+      disabled={!refs.length}
+    >
+      <option value="">-- Select reference --</option>
+      {refs.map((r) => (
+        <option key={r} value={r}>{r}</option>
+      ))}
+    </select>
+  </div>
 
-        <div className="filter">
-          <label>Couleur</label>
-          <select
-            value={selectedColor}
-            onChange={(e) => setSelectedColor(e.target.value)}
-            disabled={!colors.length || loadingFilters}
-          >
-            <option value="">-- Sélectionner une couleur --</option>
-            {colors.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+  <div className="filter">
+    <label>Color</label>
+    <select
+      value={selectedColor}
+      onChange={(e) => setSelectedColor(e.target.value)}
+      disabled={!colors.length}
+    >
+      <option value="">-- Select color --</option>
+      {colors.map((c) => (
+        <option key={c} value={c}>{c}</option>
+      ))}
+    </select>
+  </div>
+</div>
 
       {error && <div className="error-message">{error}</div>}
       {(loadingRefs || loadingFilters || loadingTable) && (
