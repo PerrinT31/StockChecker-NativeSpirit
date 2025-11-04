@@ -154,13 +154,11 @@ export default function App() {
 
   return (
     <div className="app-container">
-   <header className="app-header" aria-label="Native Spirit – Stock Checker">
+  <header className="app-header" aria-label="Native Spirit – Stock Checker">
   <img
     src="/NATIVESPIRIT-logo-blanc-fond-transparent.png"
     alt="Native Spirit"
     className="app-logo"
-    width={180}
-    height={180}
     loading="eager"
     decoding="async"
     fetchPriority="high"
