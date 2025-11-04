@@ -159,7 +159,7 @@ export default function App() {
       {/* Header */}
       <header className="app-header" aria-label="Native Spirit – Stock Checker">
         <img
-          src="/NATIVESPIRIT-logo-defonce-gris-rvb.jpg"
+          src="/NATIVESPIRIT-logo-gris-rvb-fond-transparent.png"
           alt="Native Spirit"
           className="app-logo"
           width={260}
