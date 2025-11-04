@@ -1,254 +1,242 @@
-// src/App.jsx — Native Spirit Stock Checker (EN, no search)
-// CSV expected in /public:
-//  • /NATIVE_SPIRIT_STOCKWEB_NS.csv
-//  • /NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
+
+
+// App.jsx – Native Spirit (version finale, full thème vert)
+// Hypothèses :
+// - Les CSV sont dans /public :
+//     • /NATIVE_SPIRIT_STOCKWEB_NS.csv
+//     • /NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
+// - Le logo blanc est dans /public/NATIVESPIRIT-logo-pastille-blanc.png
 
 import React, { useEffect, useMemo, useState } from "react";
 import {
-  getUniqueRefs,
-  getColorsFor,
-  getSizesFor,
-  getStock,
-} from "./stockCsvapi.js";          // ⚠️ respecte exactement le nom du fichier
+  getUniqueRefs,
+  getColorsFor,
+  getSizesFor,
+  getStock,
+} from "./stockCsvApi.js";
 import { getReappro } from "./reapproCsvApi.js";
 import "./index.css";
 
-// helper: normalize for safety (accents/case/extra spaces)
-const normalize = (s) =>
-  String(s ?? "")
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase().trim();
-
 export default function App() {
-  // Data
-  const [refs, setRefs] = useState([]);
-  const [colors, setColors] = useState([]);
-  const [sizes, setSizes] = useState([]);
+  const [refs, setRefs] = useState([]);
+  const [colors, setColors] = useState([]);
+  const [sizes, setSizes] = useState([]);
 
-  const [selectedRef, setSelectedRef] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedRef, setSelectedRef] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
 
-  const [stockBySize, setStockBySize] = useState({});
-  const [reapproBySize, setReapproBySize] = useState({});
+  const [stockBySize, setStockBySize] = useState({});
+  const [reapproBySize, setReapproBySize] = useState({});
 
-  // UI states
-  const [loadingRefs, setLoadingRefs] = useState(false);
-  const [loadingFilters, setLoadingFilters] = useState(false);
-  const [loadingTable, setLoadingTable] = useState(false);
-  const [error, setError] = useState("");
+  const [loadingRefs, setLoadingRefs] = useState(false);
+  const [loadingFilters, setLoadingFilters] = useState(false);
+  const [loadingTable, setLoadingTable] = useState(false);
+  const [error, setError] = useState("");
 
-  // Safety wrappers (avoid trailing/multiple spaces mismatches)
-  const safeRef   = useMemo(() => (selectedRef || "").trim(), [selectedRef]);
-  const safeColor = useMemo(
-    () => (selectedColor || "").replace(/\s+/g, " ").trim(),
-    [selectedColor]
-  );
+  const sizeOrder = useMemo(
+    () => ["2XS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"],
+    []
+  );
 
-  // Size order (Native Spirit)
-  const sizeOrder = useMemo(
-    () => ["2XS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL", "6XL"],
-    []
-  );
+  // 1️⃣ Charger les références
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      setLoadingRefs(true);
+      setError("");
+      try {
+        const list = await getUniqueRefs();
+        if (!alive) return;
+        setRefs(list);
+      } catch {
+        if (!alive) return;
+        setError("Impossible de charger les références.");
+      } finally {
+        if (alive) setLoadingRefs(false);
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
 
-  // 1) Load references
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      setLoadingRefs(true);
-      setError("");
-      try {
-        const list = await getUniqueRefs();
-        if (!alive) return;
-        setRefs(list);
-      } catch {
-        if (!alive) return;
-        setError("Unable to load references.");
-      } finally {
-        if (alive) setLoadingRefs(false);
-      }
-    })();
-    return () => { alive = false; };
-  }, []);
+  // 2️⃣ Charger les couleurs quand une ref est choisie
+  useEffect(() => {
+    if (!selectedRef) {
+      setColors([]);
+      setSelectedColor("");
+      setSizes([]);
+      setStockBySize({});
+      setReapproBySize({});
+      return;
+    }
 
-  // 2) When selecting a reference -> load colors
-  useEffect(() => {
-    if (!safeRef) {
-      setColors([]);
-      setSelectedColor("");
-      setSizes([]);
-      setStockBySize({});
-      setReapproBySize({});
-      return;
-    }
-    let alive = true;
-    (async () => {
-      setLoadingFilters(true);
-      setError("");
-      try {
-        const cols = await getColorsFor(safeRef);
-        if (!alive) return;
-        setColors(cols);
-        setSelectedColor("");
-        setSizes([]);
-        setStockBySize({});
-        setReapproBySize({});
-      } catch {
-        if (!alive) return;
-        setError("Unable to load colors for this reference.");
-      } finally {
-        if (alive) setLoadingFilters(false);
-      }
-    })();
-    return () => { alive = false; };
-  }, [safeRef]);
+    let alive = true;
+    (async () => {
+      setLoadingFilters(true);
+      setError("");
+      try {
+        const cols = await getColorsFor(selectedRef);
+        if (!alive) return;
+        setColors(cols);
+        setSelectedColor("");
+        setSizes([]);
+        setStockBySize({});
+        setReapproBySize({});
+      } catch {
+        if (!alive) return;
+        setError("Impossible de charger les couleurs pour cette référence.");
+      } finally {
+        if (alive) setLoadingFilters(false);
+      }
+    })();
 
-  // 3) When selecting a color -> load sizes, stock & replenishment
-  useEffect(() => {
-    if (!safeRef || !safeColor) {
-      setSizes([]);
-      setStockBySize({});
-      setReapproBySize({});
-      return;
-    }
-    let alive = true;
-    (async () => {
-      setLoadingTable(true);
-      setError("");
-      try {
-        const rawSizes = await getSizesFor(safeRef, safeColor);
-        if (!alive) return;
+    return () => {
+      alive = false;
+    };
+  }, [selectedRef]);
 
-        const sorted = [
-          ...sizeOrder.filter((sz) => rawSizes.includes(sz)),
-          ...rawSizes
-            .filter((sz) => !sizeOrder.includes(sz))
-            .sort((a, b) => a.localeCompare(b)),
-        ];
-        setSizes(sorted);
+  // 3️⃣ Charger tailles + stocks + réappro quand couleur choisie
+  useEffect(() => {
+    if (!selectedRef || !selectedColor) {
+      setSizes([]);
+      setStockBySize({});
+      setReapproBySize({});
+      return;
+    }
 
-        const results = await Promise.all(
-          sorted.map(async (size) => {
-            const [stock, reappro] = await Promise.all([
-              getStock(safeRef, safeColor, size),
-              getReappro(safeRef, safeColor, size),
-            ]);
-            return { size, stock, reappro };
-          })
-        );
+    let alive = true;
+    (async () => {
+      setLoadingTable(true);
+      setError("");
+      try {
+        const rawSizes = await getSizesFor(selectedRef, selectedColor);
+        if (!alive) return;
 
-        const nextStock = {};
-        const nextReappro = {};
-        results.forEach(({ size, stock, reappro }) => {
-          nextStock[size] = stock;
-          nextReappro[size] = reappro;
-        });
+        const sorted = [
+          ...sizeOrder.filter((sz) => rawSizes.includes(sz)),
+          ...rawSizes
+            .filter((sz) => !sizeOrder.includes(sz))
+            .sort((a, b) => a.localeCompare(b)),
+        ];
+        setSizes(sorted);
 
-        if (!alive) return;
-        setStockBySize(nextStock);
-        setReapproBySize(nextReappro);
+        const results = await Promise.all(
+          sorted.map(async (size) => {
+            const [stock, reappro] = await Promise.all([
+              getStock(selectedRef, selectedColor, size),
+              getReappro(selectedRef, selectedColor, size),
+            ]);
+            return { size, stock, reappro };
+          })
+        );
 
-        if (!sorted.length) setError("No size found for this Reference / Color.");
-      } catch {
-        if (!alive) return;
-        setError("Unable to load size table.");
-      } finally {
-        if (alive) setLoadingTable(false);
-      }
-    })();
-    return () => { alive = false; };
-  }, [safeRef, safeColor, sizeOrder]);
+        const nextStock = {};
+        const nextReappro = {};
+        results.forEach(({ size, stock, reappro }) => {
+          nextStock[size] = stock;
+          nextReappro[size] = reappro;
+        });
 
-  return (
-    <div className="app-container">
-      {/* Header */}
-      <header className="app-header" aria-label="Native Spirit – Stock Checker">
-        <img
-          src="/NATIVESPIRIT-logo-blanc-fond-transparent.png"
-          alt="Native Spirit"
-          className="app-logo"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
-        <h1 className="app-title">Stock Checker</h1>
-      </header>
+        if (!alive) return;
+        setStockBySize(nextStock);
+        setReapproBySize(nextReappro);
+      } catch {
+        if (!alive) return;
+        setError("Impossible de charger les données de stock.");
+      } finally {
+        if (alive) setLoadingTable(false);
+      }
+    })();
 
-      {/* Filters (side-by-side) */}
-      <div className="filters two-cols">
-        <div className="filter">
-          <label>Reference</label>
-          <select
-            value={selectedRef}
-            onChange={(e) => setSelectedRef(e.target.value.trim())}
-            disabled={!refs.length || loadingRefs}
-          >
-            <option value="">-- Select reference --</option>
-            {refs.map((r) => (
-              <option key={r} value={r}>{r}</option>
-            ))}
-          </select>
-        </div>
+    return () => {
+      alive = false;
+    };
+  }, [selectedRef, selectedColor, sizeOrder]);
 
-        <div className="filter">
-          <label>Color</label>
-          <select
-            value={selectedColor}
-            onChange={(e) => setSelectedColor(e.target.value.replace(/\s+/g, " ").trim())}
-            disabled={!colors.length || loadingFilters}
-          >
-            <option value="">-- Select color --</option>
-            {colors.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
-          </select>
-        </div>
-      </div>
+  return (
+    <div className="app-container">
+      <header className="app-header" aria-label="Native Spirit – Stock Checker">
+  <img
+    src="/NATIVESPIRIT-logo-blanc-fond-transparent.png"
+    alt="Native Spirit"
+    className="app-logo"
+    loading="eager"
+    decoding="async"
+    fetchPriority="high"
+  />
+  <h1 className="app-title">Stock Checker</h1>
+</header>
 
-      {/* Status messages */}
-      {error && (
-        <div role="alert" className="error-message" style={{ marginTop: 12 }}>
-          {error}
-        </div>
-      )}
-      {(loadingRefs || loadingFilters || loadingTable) && (
-        <div className="loading" style={{ margin: "8px 0 12px" }}>
-          Loading…
-        </div>
-      )}
+      <div className="filters">
+        <div className="filter">
+          <label>Reference</label>
+          <select
+            value={selectedRef}
+            onChange={(e) => setSelectedRef(e.target.value)}
+            disabled={loadingRefs}
+          >
+            <option value="">-- Select reference --</option>
+            {refs.map((r) => (
+              <option key={r} value={r}>
+                {r}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      {/* Results table */}
-      {safeRef && safeColor ? (
-        <table className="results-table">
-          <thead>
-            <tr>
-              <th>Size</th>
-              <th>Stock</th>
-              <th>Replenishment (Date)</th>
-              <th>Qty Incoming</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sizes.length ? (
-              sizes.map((size) => (
-                <tr key={size}>
-                  <td>{size}</td>
-                  <td className="right">
-                    {Number(stockBySize[size] || 0) > 0 ? stockBySize[size] : "Out of stock"}
-                  </td>
-                  <td className="center">{reapproBySize[size]?.dateToRec || "-"}</td>
-                  <td className="right">{reapproBySize[size]?.quantity ?? "-"}</td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan={4} className="center">No data for this selection.</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      ) : (
-        <div className="spacer" />
-      )}
-    </div>
-  );
+        <div className="filter">
+          <label>Color</label>
+          <select
+            value={selectedColor}
+            onChange={(e) => setSelectedColor(e.target.value)}
+            disabled={!colors.length || loadingFilters}
+          >
+            <option value="">-- Select color --</option>
+            {colors.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {error && <div className="error-message">{error}</div>}
+      {(loadingRefs || loadingFilters || loadingTable) && (
+        <div className="loading">Chargement…</div>
+      )}
+
+      {sizes.length > 0 && (
+        <table className="results-table">
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Stock</th>
+              <th>Replenishment (Date)</th>
+              <th>Qty Incoming</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sizes.map((size) => (
+              <tr key={size}>
+                <td>{size}</td>
+                <td className="right">
+                  {Number(stockBySize[size] || 0) > 0
+                    ? stockBySize[size]
+                    : "Rupture"}
+                </td>
+                <td className="center">
+                  {reapproBySize[size]?.dateToRec || "-"}
+                </td>
+                <td className="right">
+                  {reapproBySize[size]?.quantity ?? "-"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
 }
