@@ -158,18 +158,17 @@ export default function App() {
     <div className="app-container">
       {/* Header */}
       <header className="app-header" aria-label="Native Spirit – Stock Checker">
-        <img
-          src="/NATIVESPIRIT-logo-gris-rvb-fond-transparent.png"
-          alt="Native Spirit"
-          className="app-logo"
-          width={260}
-          height="auto"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-          onError={(e) => { e.currentTarget.style.display = "none"; }}
-        />
-      </header>
+  <img
+    className="app-logo"
+    src="/NATIVESPIRIT-logo-gris-rvb-fond-transparent.png"   // <— chemin absolu depuis /public
+    alt="Native Spirit"
+    width={420}
+    height={90}
+    loading="eager"
+    decoding="async"
+  />
+  <h1 className="app-title">STOCK CHECKER</h1>
+</header>
 
       {/* Filtres */}
       <div className="filters two-cols">
