@@ -1,158 +1,67 @@
-/* =========================
-   index.css – Native Spirit
-   ========================= */
+/* === Native Spirit FULL GREEN THEME (override) === */
 
-/* Reset & base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-:root {
-  --ns-green: #93BCB4; /* vert doux Native Spirit */
-  --ns-green-dark: #44655E; /* vert profond */
-  --ns-white: #ffffff;
-  --ns-shadow: rgba(0, 0, 0, 0.1);
-}
-
-/* Background global */
-body {
-  background-color: var(--ns-green);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 60px;
-  min-height: 100vh;
-  color: var(--ns-green-dark);
-}
-
-/* Conteneur principal */
+/* 1) Conteneur sans carte blanche */
 .app-container {
-  background-color: var(--ns-white);
-  border-radius: 16px;
-  box-shadow: 0 6px 24px var(--ns-shadow);
-  padding: 2rem;
-  width: 90%;
-  max-width: 950px;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  max-width: 1100px;
+  padding: 2.5rem 1.25rem 3rem;
 }
 
-/* Header */
-.app-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .75rem;
-  margin-bottom: 1.5rem;
-}
-
-.app-logo {
-  height: 75px;
-  width: auto;
-}
-
+/* 2) Header + logo blanc + titre blanc */
+.app-header { margin-bottom: 1.75rem; }
+.app-logo { height: 78px; filter: drop-shadow(0 2px 8px rgba(0,0,0,.15)); }
 .app-title {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 28px;
-  color: var(--ns-green-dark);
+  color: #ffffff !important;
+  letter-spacing: 1.2px;
 }
 
-/* Filtres */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0 1.5rem;
-}
-
-.filter {
-  flex: 1 1 320px;
-  display: flex;
-  flex-direction: column;
-}
-
+/* 3) Labels et textes verts → blancs pour contraste */
 .filter label {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: var(--ns-green-dark);
+  color: #ffffff !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
 
+/* 4) Selects lisibles sur fond vert (blanc doux) */
 .filter select {
-  padding: 0.7rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: var(--ns-white);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--ns-green-dark);
-  transition: border-color 0.2s ease, background 0.2s ease;
+  background: rgba(255,255,255,0.95) !important;
+  border: 1px solid rgba(0,0,0,0.18) !important;
+  color: #0B1F1C !important;
 }
-
 .filter select:focus {
-  border-color: var(--ns-green-dark);
-  background: #f3f8f7;
-  outline: none;
+  border-color: rgba(255,255,255,0.9) !important;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.25);
+  background: #ffffff !important;
 }
 
-/* Tableau */
+/* 5) Tableau “verre dépoli” vert (texte blanc) */
 .results-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px var(--ns-shadow);
+  background: rgba(255,255,255,0.08) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.18) !important;
+  border-radius: 12px !important;
 }
-
 .results-table th,
 .results-table td {
-  padding: 0.8rem 1rem;
-  border: 1px solid #e8e8e8;
-  text-align: left;
-  font-size: 15px;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  color: #ffffff !important;
 }
-
 .results-table th {
-  background-color: #E7F4F2;
-  color: var(--ns-green-dark);
-  font-weight: 700;
+  background: rgba(255,255,255,0.18) !important;
 }
-
 .results-table tr:nth-child(even) {
-  background: #f9fbfa;
+  background: rgba(255,255,255,0.06) !important;
 }
 
-.results-table td.right {
-  text-align: right;
-}
+/* 6) Messages/états également en blanc */
+.center { color: #ffffff !important; }
 
-.results-table td.center {
-  text-align: center;
-}
+/* 7) Un peu d’air en haut */
+body { padding-top: 40px; }
 
-/* Messages */
-.center {
-  text-align: center;
-  font-weight: 500;
-  color: var(--ns-green-dark);
-}
-
-/* Responsive */
+/* 8) Responsive : titres centrés, confort mobile */
 @media (max-width: 600px) {
-  .filters {
-    flex-direction: column;
-  }
-  .filter {
-    width: 100%;
-  }
-  .app-title {
-    font-size: 22px;
-    text-align: center;
-  }
+  .app-title { text-align: center; }
 }
