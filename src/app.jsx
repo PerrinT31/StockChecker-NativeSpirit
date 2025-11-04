@@ -6,7 +6,7 @@ import {
   getColorsFor,
   getSizesFor,
   getStock,
-} from "./stockCsvsApi.js";          // ← correspond à src/stockCsvsApi.js
+} from "./stockCsvApi.js";          // ← correspond à src/stockCsvsApi.js
 import { getReappro } from "./reapproCsvApi.js";
 import "./index.css";
 
