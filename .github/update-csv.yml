@@ -1,1 +1,54 @@
+# .github/workflows/update-stock-csv.yml
+name: Daily update – Native Spirit stock CSV
+
+on:
+  schedule:
+    - cron: '10 06 * * *'   # tous les jours à 06:10 UTC (≈ 07:10 Paris en hiver)
+  workflow_dispatch:        # lancement manuel possible
+
+jobs:
+  update-stock-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Checkout du dépôt avec historique complet
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      # 2) Alignement sur la branche distante
+      - name: Reset local → remote
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      # 3) Télécharger le CSV Native Spirit
+      - name: Download NATIVE_SPIRIT_STOCKWEB_NS.csv
+        run: |
+          mkdir -p public
+          curl -fSL "https://files.nativespirit-ns.com/documents/NATIVE_SPIRIT_STOCKWEB_NS.csv" \
+            -o public/NATIVE_SPIRIT_STOCKWEB_NS.csv
+
+      # (Optionnel) Sanity check : fichier non vide
+      - name: Sanity check
+        run: |
+          test -s public/NATIVE_SPIRIT_STOCKWEB_NS.csv || (echo "CSV vide ou introuvable" && exit 1)
+
+      # 4) Commit & push si le CSV a changé
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+          git add public/NATIVE_SPIRIT_STOCKWEB_NS.csv
+
+          if git diff --cached --quiet; then
+            echo "Aucun changement détecté – pas de commit/push."
+            exit 0
+          fi
+
+          git commit -m "chore(NS): daily stock CSV update"
+          git push origin main
 
