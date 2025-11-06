@@ -201,12 +201,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Messages d'état */}
-      {error && <div className="error-message" role="alert">{error}</div>}
-      {(loadingRefs || loadingFilters || loadingTable) && (
-        <div className="loading">Loading…</div>
-      )}
-
       {/* Tableau résultats */}
       {sizes.length > 0 ? (
         <table className="results-table">
