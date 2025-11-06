@@ -160,11 +160,6 @@ body {
   background: rgba(176,0,32,.85);
   color: #fff;
 }
-.loading {
-  margin-top: 1rem;
-  color: #2D3C4B;
-  font-style: italic;
-}
 
 /* Responsive */
 @media (max-width: 760px) {
