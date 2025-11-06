@@ -2,14 +2,16 @@
 // CSV attendu dans /public : NATIVE_SPIRIT_REAPPROWEB_NS (2).csv
 // Expose :
 //   - loadReappro()
-//   - getReapproAll(ref, color, size) -> [{ dateToRec, quantity }, ...]
+//   - getReapproAll(ref, color, size) -> [{ dateToRec, quantity }, ...] (trié du +proche au +lointain)
 //   - getReappro(ref, color, size)    -> { dateToRec, quantity } (agrégé)
 
 export const REAPPRO_CSV_URL = encodeURI("/NATIVE_SPIRIT_REAPPROWEB_NS (2).csv");
 
 let _cache = null;
 
-// ---------- Normalisations ----------
+/* =======================
+   Normalisations & utils
+   ======================= */
 const norm = (s) => (s ?? "").toString().trim();
 
 // Ex: NS221A -> NS221
@@ -37,7 +39,32 @@ const normSize = (s) => {
   return SIZE_ALIASES.get(up) || up;
 };
 
-// ---------- Helpers entêtes & split ----------
+// Transforme une date texte en clé triable AAAAMMJJ (nombre)
+function toDateKey(str) {
+  const t = String(str || "").trim();
+  if (!t || t === "-") return Number.MAX_SAFE_INTEGER;
+
+  // JJ/MM/AAAA
+  let m = t.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  if (m) {
+    const d = +m[1], mo = +m[2], y = +m[3];
+    return y * 10000 + mo * 100 + d;
+  }
+
+  // AAAA-MM-JJ
+  m = t.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (m) {
+    const y = +m[1], mo = +m[2], d = +m[3];
+    return y * 10000 + mo * 100 + d;
+  }
+
+  // Inconnu : tout en bas
+  return Number.MAX_SAFE_INTEGER;
+}
+
+/* =======================
+   Helpers entêtes & split
+   ======================= */
 const contains = (needle) => (h) => h.includes(needle);
 const equals   = (needle) => (h) => h === needle;
 
@@ -55,7 +82,9 @@ function splitSmart(line) {
   return line.split(",");
 }
 
-// ---------- Chargement CSV ----------
+/* =======================
+   Chargement CSV
+   ======================= */
 export async function loadReappro() {
   if (_cache) return _cache;
 
@@ -114,6 +143,10 @@ export async function loadReappro() {
   return _cache;
 }
 
+/* =======================
+   API réappro
+   ======================= */
+
 /** Liste détaillée des réassorts pour baseRef+color+size
  *  @returns [{ dateToRec: string, quantity: number }, ...] (trié par date asc, "-" en dernier)
  */
@@ -135,13 +168,10 @@ export async function getReapproAll(ref, color, size) {
     byDate.set(d, (byDate.get(d) || 0) + (r.quantity || 0));
   }
 
+  // Tri du plus tôt au plus tard (les "-" en dernier)
   const list = [...byDate.entries()]
     .map(([dateToRec, quantity]) => ({ dateToRec, quantity }))
-    .sort((a, b) => {
-      if (a.dateToRec === "-" && b.dateToRec !== "-") return 1;
-      if (b.dateToRec === "-" && a.dateToRec !== "-") return -1;
-      return String(a.dateToRec).localeCompare(String(b.dateToRec));
-    });
+    .sort((a, b) => toDateKey(a.dateToRec) - toDateKey(b.dateToRec));
 
   return list;
 }
