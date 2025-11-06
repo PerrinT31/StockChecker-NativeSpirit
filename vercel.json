@@ -1,0 +1,10 @@
+{
+  "headers": [
+    {
+      "source": "/(.*\\.csv)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, max-age=0" }
+      ]
+    }
+  ]
+}
