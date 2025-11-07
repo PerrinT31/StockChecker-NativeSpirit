@@ -1,0 +1,46 @@
+name: MAJ quotidienne CSV - Stock Native Spirit
+
+on:
+  schedule:
+    - cron: '10 8 * * *'   # 08:10 UTC
+  workflow_dispatch:
+
+jobs:
+  update-stock-csv:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Reset local to remote
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Télécharger le CSV Stock
+        run: |
+          curl -fsSL "https://files.nativespirit-ns.com/documents/NATIVE_SPIRIT_STOCKWEB_NS.csv" \
+            -o public/NATIVE_SPIRIT_STOCKWEB_NS.csv
+
+      - name: Commit & push si modifié
+        run: |
+          git config user.name  "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add public/NATIVE_SPIRIT_STOCKWEB_NS.csv
+          if git diff --cached --quiet; then
+            echo "Aucun changement détecté – pas de commit."
+            exit 0
+          fi
+          git commit -m "MAJ quotidienne Stock Native Spirit"
+          git push origin main
+
+      # OPTIONNEL : trigger Vercel deploy hook
+      # - name: Trigger Vercel deploy
+      #   run: curl -X POST "$VERCEL_DEPLOY_HOOK_URL"
+      #   env:
+      #     VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
