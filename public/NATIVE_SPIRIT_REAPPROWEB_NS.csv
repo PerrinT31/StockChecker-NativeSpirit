@@ -1,5 +1,5 @@
 REF;DESIGNATION;COLOR;SIZE;COLOR CODE;SIZE CODE;DATE TO RECEIVE;QUANTITY;SKU
-NS014;Eco-friendly unisex beanie;Organic Khaki;One Size;85222;85218;09/01/2026;2300;NS014_85222_85218
+NS014;Eco-friendly unisex beanie;Organic Khaki;One Size;85222;85218;12/01/2026;2300;NS014_85222_85218
 NS015;Eco-friendly unisex merino wool beanie;Cool Blue;One Size;86153;86151;12/01/2026;1300;NS015_86153_86151
 NS016;Eco-friendly unisex corduroy cap 6 panels;Black;One Size;89084;89083;27/04/2026;1834;NS016_89084_89083
 NS016;Eco-friendly unisex corduroy cap 6 panels;Dark camel;One Size;89085;89083;10/04/2026;3000;NS016_89085_89083
@@ -64,6 +64,7 @@ NS107C;Fleece shoulder bag;Wet Sand;One Size;74452;74446;09/01/2026;600;NS107C_7
 NS108;Eco-friendly corduroy washed effect fanny bag;Washed Dark Camel;One Size;89887;89885;30/06/2026;3000;NS108_89887_89885
 NS108;Eco-friendly corduroy washed effect fanny bag;Washed Navy Blue;One Size;89888;89885;30/06/2026;2000;NS108_89888_89885
 NS108;Eco-friendly corduroy washed effect fanny bag;Washed Organic Khaki;One Size;89889;89885;30/06/2026;2000;NS108_89889_89885
+NS109;Eco-friendly Unisex backpack;Black;One Size;95857;95856;12/01/2026;1380;NS109_95857_95856
 NS109;Eco-friendly Unisex backpack;Organic Khaki / Black;One Size;95859;95856;12/01/2026;1336;NS109_95859_95856
 NS109;Eco-friendly Unisex backpack;Dark camel / Black;One Size;97062;95856;09/01/2026;1320;NS109_97062_95856
 NS110;Eco-friendly large shopping bag;Hemp / Desert Sand / Horizon Blue Stripe;One Size;70353;70351;24/03/2026;3729;NS110_70353_70351
@@ -157,11 +158,12 @@ NS208;Eco-friendly ladies’ piqué polo shirt;White;S;85781;85762;29/05/2026;450;N
 NS208;Eco-friendly ladies’ piqué polo shirt;White;M;85781;85765;29/05/2026;660;NS208_85781_85765
 NS208;Eco-friendly ladies’ piqué polo shirt;White;L;85781;85767;29/05/2026;270;NS208_85781_85767
 NS208;Eco-friendly ladies’ piqué polo shirt;White;XXL;85781;85771;29/05/2026;90;NS208_85781_85771
-NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;XS;94167;85761;12/01/2026;189;NS208_94167_85761
-NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;M;94167;85765;12/01/2026;848;NS208_94167_85765
-NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;L;94167;85767;12/01/2026;528;NS208_94167_85767
-NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;XL;94167;85768;12/01/2026;232;NS208_94167_85768
-NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;XXL;94167;85771;12/01/2026;104;NS208_94167_85771
+NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;XS;94167;85761;12/01/2026;188;NS208_94167_85761
+NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;S;94167;85762;12/01/2026;603;NS208_94167_85762
+NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;M;94167;85765;12/01/2026;847;NS208_94167_85765
+NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;L;94167;85767;12/01/2026;527;NS208_94167_85767
+NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;XL;94167;85768;12/01/2026;231;NS208_94167_85768
+NS208;Eco-friendly ladies’ piqué polo shirt;Iron Grey;XXL;94167;85771;12/01/2026;103;NS208_94167_85771
 NS208;Eco-friendly ladies’ piqué polo shirt;Raw Natural;XS;94168;85761;12/01/2026;184;NS208_94168_85761
 NS208;Eco-friendly ladies’ piqué polo shirt;Raw Natural;S;94168;85762;12/01/2026;616;NS208_94168_85762
 NS208;Eco-friendly ladies’ piqué polo shirt;Raw Natural;M;94168;85765;12/01/2026;854;NS208_94168_85765
@@ -235,11 +237,11 @@ NS300;Eco-friendly unisex t-shirt;White;XXL;68558;68512;29/01/2026;250;NS300_685
 NS300;Eco-friendly unisex t-shirt;White;XXL;68558;68512;24/03/2026;1500;NS300_68558_68512
 NS300;Eco-friendly unisex t-shirt;White;XXL;68558;68512;27/04/2026;200;NS300_68558_68512
 NS300;Eco-friendly unisex t-shirt;White;3XL;68558;68517;12/01/2026;450;NS300_68558_68517
-NS300;Eco-friendly unisex t-shirt;White;4XL;68558;68518;09/01/2026;100;NS300_68558_68518
+NS300;Eco-friendly unisex t-shirt;White;4XL;68558;68518;12/01/2026;100;NS300_68558_68518
 NS300;Eco-friendly unisex t-shirt;White;5XL;68558;68523;09/01/2026;50;NS300_68558_68523
 NS300A;Eco-friendly unisex t-shirt;Moon Grey Heather;L;68544;68508;12/01/2026;1800;NS300A_68544_68508
 NS300A;Eco-friendly unisex t-shirt;Moon Grey Heather;XL;68544;68510;09/01/2026;1800;NS300A_68544_68510
-NS300A;Eco-friendly unisex t-shirt;Volcano Grey Heather;M;68556;68504;09/01/2026;3900;NS300A_68556_68504
+NS300A;Eco-friendly unisex t-shirt;Volcano Grey Heather;M;68556;68504;12/01/2026;3900;NS300A_68556_68504
 NS300A;Eco-friendly unisex t-shirt;Volcano Grey Heather;L;68556;68508;09/01/2026;7100;NS300A_68556_68508
 NS300A;Eco-friendly unisex t-shirt;Volcano Grey Heather;XL;68556;68510;09/01/2026;5150;NS300A_68556_68510
 NS300A;Eco-friendly unisex t-shirt;Volcano Grey Heather;XXL;68556;68514;09/01/2026;1800;NS300A_68556_68514
@@ -307,7 +309,7 @@ NS300C;Eco-friendly unisex t-shirt;Cool Blue;XL;68531;68509;29/01/2026;700;NS300
 NS300C;Eco-friendly unisex t-shirt;Cool Blue;XL;68531;68509;24/03/2026;900;NS300C_68531_68509
 NS300C;Eco-friendly unisex t-shirt;Cool Blue;XL;68531;68509;27/04/2026;700;NS300C_68531_68509
 NS300C;Eco-friendly unisex t-shirt;Cool Blue;XL;68531;68509;30/06/2026;450;NS300C_68531_68509
-NS300C;Eco-friendly unisex t-shirt;Cool Blue;XXL;68531;68513;09/01/2026;400;NS300C_68531_68513
+NS300C;Eco-friendly unisex t-shirt;Cool Blue;XXL;68531;68513;12/01/2026;400;NS300C_68531_68513
 NS300C;Eco-friendly unisex t-shirt;Cool Blue;XXL;68531;68513;29/01/2026;50;NS300C_68531_68513
 NS300C;Eco-friendly unisex t-shirt;Cool Blue;XXL;68531;68513;24/03/2026;550;NS300C_68531_68513
 NS300C;Eco-friendly unisex t-shirt;Cool Blue;XXL;68531;68513;27/04/2026;300;NS300C_68531_68513
@@ -321,7 +323,7 @@ NS300C;Eco-friendly unisex t-shirt;Dark Cherry;XS;68534;68497;30/06/2026;100;NS3
 NS300C;Eco-friendly unisex t-shirt;Dark Cherry;XS;68534;68497;30/07/2026;300;NS300C_68534_68497
 NS300C;Eco-friendly unisex t-shirt;Dark Cherry;S;68534;68501;30/06/2026;450;NS300C_68534_68501
 NS300C;Eco-friendly unisex t-shirt;Dark Cherry;S;68534;68501;30/07/2026;550;NS300C_68534_68501
-NS300C;Eco-friendly unisex t-shirt;Dark Cherry;M;68534;68503;08/01/2026;2000;NS300C_68534_68503
+NS300C;Eco-friendly unisex t-shirt;Dark Cherry;M;68534;68503;12/01/2026;2000;NS300C_68534_68503
 NS300C;Eco-friendly unisex t-shirt;Dark Cherry;M;68534;68503;27/04/2026;250;NS300C_68534_68503
 NS300C;Eco-friendly unisex t-shirt;Dark Cherry;M;68534;68503;29/05/2026;950;NS300C_68534_68503
 NS300C;Eco-friendly unisex t-shirt;Dark Cherry;M;68534;68503;30/06/2026;1400;NS300C_68534_68503
@@ -370,7 +372,7 @@ NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;S;68538;68501;27/04/2026;150;NS3
 NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;S;68538;68501;29/05/2026;250;NS300C_68538_68501
 NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;S;68538;68501;30/06/2026;550;NS300C_68538_68501
 NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;S;68538;68501;30/07/2026;500;NS300C_68538_68501
-NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;M;68538;68503;09/01/2026;2750;NS300C_68538_68503
+NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;M;68538;68503;12/01/2026;2750;NS300C_68538_68503
 NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;M;68538;68503;27/04/2026;800;NS300C_68538_68503
 NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;M;68538;68503;29/05/2026;550;NS300C_68538_68503
 NS300C;Eco-friendly unisex t-shirt;Hibiscus Red;M;68538;68503;30/06/2026;900;NS300C_68538_68503
@@ -401,9 +403,9 @@ NS300C;Eco-friendly unisex t-shirt;Iron Grey;XL;68539;68509;24/03/2026;550;NS300
 NS300C;Eco-friendly unisex t-shirt;Iron Grey;XXL;68539;68513;12/01/2026;200;NS300C_68539_68513
 NS300C;Eco-friendly unisex t-shirt;Iron Grey;XXL;68539;68513;29/01/2026;540;NS300C_68539_68513
 NS300C;Eco-friendly unisex t-shirt;Iron Grey;XXL;68539;68513;24/03/2026;350;NS300C_68539_68513
-NS300C;Eco-friendly unisex t-shirt;Iron Grey;3XL;68539;68515;09/01/2026;50;NS300C_68539_68515
+NS300C;Eco-friendly unisex t-shirt;Iron Grey;3XL;68539;68515;12/01/2026;50;NS300C_68539_68515
 NS300C;Eco-friendly unisex t-shirt;Iron Grey;3XL;68539;68515;24/03/2026;150;NS300C_68539_68515
-NS300C;Eco-friendly unisex t-shirt;Iron Grey;4XL;68539;68519;08/01/2026;100;NS300C_68539_68519
+NS300C;Eco-friendly unisex t-shirt;Iron Grey;4XL;68539;68519;12/01/2026;100;NS300C_68539_68519
 NS300C;Eco-friendly unisex t-shirt;Iron Grey;4XL;68539;68519;29/01/2026;150;NS300C_68539_68519
 NS300C;Eco-friendly unisex t-shirt;Iron Grey;4XL;68539;68519;24/03/2026;50;NS300C_68539_68519
 NS300C;Eco-friendly unisex t-shirt;Ivory;XXS;68540;68495;24/03/2026;400;NS300C_68540_68495
@@ -479,7 +481,7 @@ NS300C;Eco-friendly unisex t-shirt;Navy Blue;XXL;68545;68513;29/01/2026;1000;NS3
 NS300C;Eco-friendly unisex t-shirt;Navy Blue;XXL;68545;68513;24/03/2026;1500;NS300C_68545_68513
 NS300C;Eco-friendly unisex t-shirt;Navy Blue;XXL;68545;68513;27/04/2026;800;NS300C_68545_68513
 NS300C;Eco-friendly unisex t-shirt;Navy Blue;XXL;68545;68513;30/07/2026;100;NS300C_68545_68513
-NS300C;Eco-friendly unisex t-shirt;Navy Blue;3XL;68545;68515;09/01/2026;500;NS300C_68545_68515
+NS300C;Eco-friendly unisex t-shirt;Navy Blue;3XL;68545;68515;12/01/2026;500;NS300C_68545_68515
 NS300C;Eco-friendly unisex t-shirt;Navy Blue;3XL;68545;68515;24/03/2026;600;NS300C_68545_68515
 NS300C;Eco-friendly unisex t-shirt;Navy Blue;3XL;68545;68515;27/04/2026;150;NS300C_68545_68515
 NS300C;Eco-friendly unisex t-shirt;Navy Blue;3XL;68545;68515;30/07/2026;250;NS300C_68545_68515
@@ -501,7 +503,7 @@ NS300C;Eco-friendly unisex t-shirt;Organic Khaki;XXL;68547;68513;09/01/2026;300;
 NS300C;Eco-friendly unisex t-shirt;Organic Khaki;XXL;68547;68513;24/03/2026;100;NS300C_68547_68513
 NS300C;Eco-friendly unisex t-shirt;Organic Khaki;XXL;68547;68513;27/04/2026;350;NS300C_68547_68513
 NS300C;Eco-friendly unisex t-shirt;Organic Khaki;XXL;68547;68513;30/07/2026;1000;NS300C_68547_68513
-NS300C;Eco-friendly unisex t-shirt;Organic Khaki;3XL;68547;68515;09/01/2026;100;NS300C_68547_68515
+NS300C;Eco-friendly unisex t-shirt;Organic Khaki;3XL;68547;68515;12/01/2026;100;NS300C_68547_68515
 NS300C;Eco-friendly unisex t-shirt;Organic Khaki;4XL;68547;68519;09/01/2026;100;NS300C_68547_68519
 NS300C;Eco-friendly unisex t-shirt;Paprika;XXS;68549;68495;09/01/2026;50;NS300C_68549_68495
 NS300C;Eco-friendly unisex t-shirt;Paprika;XS;68549;68497;09/01/2026;50;NS300C_68549_68497
@@ -514,7 +516,7 @@ NS300C;Eco-friendly unisex t-shirt;Paprika;L;68549;68507;09/01/2026;300;NS300C_6
 NS300C;Eco-friendly unisex t-shirt;Paprika;L;68549;68507;30/07/2026;100;NS300C_68549_68507
 NS300C;Eco-friendly unisex t-shirt;Paprika;XL;68549;68509;09/01/2026;200;NS300C_68549_68509
 NS300C;Eco-friendly unisex t-shirt;Paprika;XL;68549;68509;30/07/2026;250;NS300C_68549_68509
-NS300C;Eco-friendly unisex t-shirt;Paprika;XXL;68549;68513;09/01/2026;100;NS300C_68549_68513
+NS300C;Eco-friendly unisex t-shirt;Paprika;XXL;68549;68513;12/01/2026;100;NS300C_68549_68513
 NS300C;Eco-friendly unisex t-shirt;Paprika;XXL;68549;68513;30/07/2026;100;NS300C_68549_68513
 NS300C;Eco-friendly unisex t-shirt;Paprika;3XL;68549;68515;09/01/2026;50;NS300C_68549_68515
 NS300C;Eco-friendly unisex t-shirt;Paprika;3XL;68549;68515;30/07/2026;50;NS300C_68549_68515
@@ -535,7 +537,7 @@ NS300C;Eco-friendly unisex t-shirt;Peacock Blue;L;68552;68507;27/04/2026;150;NS3
 NS300C;Eco-friendly unisex t-shirt;Peacock Blue;XL;68552;68509;09/01/2026;2300;NS300C_68552_68509
 NS300C;Eco-friendly unisex t-shirt;Peacock Blue;XL;68552;68509;24/03/2026;600;NS300C_68552_68509
 NS300C;Eco-friendly unisex t-shirt;Peacock Blue;XL;68552;68509;27/04/2026;350;NS300C_68552_68509
-NS300C;Eco-friendly unisex t-shirt;Peacock Blue;XXL;68552;68513;09/01/2026;850;NS300C_68552_68513
+NS300C;Eco-friendly unisex t-shirt;Peacock Blue;XXL;68552;68513;12/01/2026;850;NS300C_68552_68513
 NS300C;Eco-friendly unisex t-shirt;Peacock Blue;XXL;68552;68513;24/03/2026;150;NS300C_68552_68513
 NS300C;Eco-friendly unisex t-shirt;Peacock Blue;XXL;68552;68513;27/04/2026;350;NS300C_68552_68513
 NS300C;Eco-friendly unisex t-shirt;Petal Rose;XS;68553;68497;27/04/2026;250;NS300C_68553_68497
@@ -545,7 +547,7 @@ NS300C;Eco-friendly unisex t-shirt;Petal Rose;L;68553;68507;12/01/2026;900;NS300
 NS300C;Eco-friendly unisex t-shirt;Petal Rose;XL;68553;68509;12/01/2026;450;NS300C_68553_68509
 NS300C;Eco-friendly unisex t-shirt;Petal Rose;XXL;68553;68513;12/01/2026;450;NS300C_68553_68513
 NS300C;Eco-friendly unisex t-shirt;Pineapple;S;68554;68501;30/06/2026;500;NS300C_68554_68501
-NS300C;Eco-friendly unisex t-shirt;Pineapple;L;68554;68507;08/01/2026;3600;NS300C_68554_68507
+NS300C;Eco-friendly unisex t-shirt;Pineapple;L;68554;68507;12/01/2026;3600;NS300C_68554_68507
 NS300C;Eco-friendly unisex t-shirt;Pineapple;XL;68554;68509;30/06/2026;800;NS300C_68554_68509
 NS300C;Eco-friendly unisex t-shirt;Pineapple;XXL;68554;68513;30/06/2026;200;NS300C_68554_68513
 NS300C;Eco-friendly unisex t-shirt;Sea Blue;L;68555;68507;30/07/2026;800;NS300C_68555_68507
@@ -883,8 +885,11 @@ NS305C;Eco-friendly unisex t-shirt;Burnt Brick;L;81241;81219;30/07/2026;100;NS30
 NS305C;Eco-friendly unisex t-shirt;Burnt Brick;XXL;81241;81223;30/07/2026;50;NS305C_81241_81223
 NS305C;Eco-friendly unisex t-shirt;Curcuma;XXS;81242;81211;09/01/2026;100;NS305C_81242_81211
 NS305C;Eco-friendly unisex t-shirt;Curcuma;S;81242;81215;30/07/2026;250;NS305C_81242_81215
+NS305C;Eco-friendly unisex t-shirt;Curcuma;M;81242;81216;12/01/2026;1100;NS305C_81242_81216
 NS305C;Eco-friendly unisex t-shirt;Curcuma;M;81242;81216;30/07/2026;200;NS305C_81242_81216
-NS305C;Eco-friendly unisex t-shirt;Driftwood;M;81246;81216;08/01/2026;900;NS305C_81246_81216
+NS305C;Eco-friendly unisex t-shirt;Curcuma;L;81242;81219;12/01/2026;1500;NS305C_81242_81219
+NS305C;Eco-friendly unisex t-shirt;Curcuma;XL;81242;81220;12/01/2026;1000;NS305C_81242_81220
+NS305C;Eco-friendly unisex t-shirt;Driftwood;M;81246;81216;12/01/2026;900;NS305C_81246_81216
 NS305C;Eco-friendly unisex t-shirt;Driftwood;XL;81246;81220;12/01/2026;1000;NS305C_81246_81220
 NS305C;Eco-friendly unisex t-shirt;Gemstone Green;L;81249;81219;09/01/2026;1500;NS305C_81249_81219
 NS305C;Eco-friendly unisex t-shirt;Hibiscus Red;XXS;81250;81211;12/01/2026;85;NS305C_81250_81211
@@ -924,7 +929,7 @@ NS305C;Eco-friendly unisex t-shirt;Moss Green;XXL;81257;81223;24/03/2026;100;NS3
 NS305C;Eco-friendly unisex t-shirt;Moss Green;XXL;81257;81223;27/04/2026;350;NS305C_81257_81223
 NS305C;Eco-friendly unisex t-shirt;Moss Green;XXL;81257;81223;29/05/2026;250;NS305C_81257_81223
 NS305C;Eco-friendly unisex t-shirt;Moss Green;XXL;81257;81223;30/07/2026;450;NS305C_81257_81223
-NS305C;Eco-friendly unisex t-shirt;Navy Blue;XXS;81258;81211;09/01/2026;550;NS305C_81258_81211
+NS305C;Eco-friendly unisex t-shirt;Navy Blue;XXS;81258;81211;12/01/2026;550;NS305C_81258_81211
 NS305C;Eco-friendly unisex t-shirt;Navy Blue;XS;81258;81212;12/01/2026;900;NS305C_81258_81212
 NS305C;Eco-friendly unisex t-shirt;Navy Blue;XS;81258;81212;05/02/2026;90;NS305C_81258_81212
 NS305C;Eco-friendly unisex t-shirt;Navy Blue;XS;81258;81212;30/07/2026;1000;NS305C_81258_81212
@@ -1153,13 +1158,11 @@ NS305C;Eco-friendly unisex t-shirt;Wet Sand;XXL;88567;81223;24/03/2026;300;NS305
 NS305C;Eco-friendly unisex t-shirt;Wet Sand;XXL;88567;81223;27/04/2026;200;NS305C_88567_81223
 NS305C;Eco-friendly unisex t-shirt;Wet Sand;XXL;88567;81223;29/05/2026;400;NS305C_88567_81223
 NS305C;Eco-friendly unisex t-shirt;Wet Sand;XXL;88567;81223;30/06/2026;200;NS305C_88567_81223
-NS305C;Eco-friendly unisex t-shirt;Forest Green;M;94179;81216;12/01/2026;2000;NS305C_94179_81216
 NS305C;Eco-friendly unisex t-shirt;Forest Green;M;94179;81216;;500;NS305C_94179_81216
-NS305C;Eco-friendly unisex t-shirt;Forest Green;L;94179;81219;12/01/2026;1800;NS305C_94179_81219
 NS305C;Eco-friendly unisex t-shirt;Forest Green;L;94179;81219;;2500;NS305C_94179_81219
 NS305C;Eco-friendly unisex t-shirt;Forest Green;XL;94179;81220;;2500;NS305C_94179_81220
 NS305C;Eco-friendly unisex t-shirt;Forest Green;XXL;94179;81223;;2000;NS305C_94179_81223
-NS305C;Eco-friendly unisex t-shirt;Sun Yellow;L;94186;81219;08/01/2026;1800;NS305C_94186_81219
+NS305C;Eco-friendly unisex t-shirt;Sun Yellow;L;94186;81219;12/01/2026;1800;NS305C_94186_81219
 NS305CX;Eco-friendly unisex t-shirt;Antique Rose;3XL;81231;81225;24/03/2026;100;NS305CX_81231_81225
 NS305CX;Eco-friendly unisex t-shirt;Antique Rose;3XL;81231;81225;29/05/2026;50;NS305CX_81231_81225
 NS305CX;Eco-friendly unisex t-shirt;Antique Rose;4XL;81231;81226;29/05/2026;50;NS305CX_81231_81226
@@ -1192,7 +1195,7 @@ NS305CX;Eco-friendly unisex t-shirt;Navy Blue;3XL;81259;81225;;200;NS305CX_81259
 NS305CX;Eco-friendly unisex t-shirt;Navy Blue;4XL;81259;81226;12/01/2026;400;NS305CX_81259_81226
 NS305CX;Eco-friendly unisex t-shirt;Navy Blue;4XL;81259;81226;30/06/2026;500;NS305CX_81259_81226
 NS305CX;Eco-friendly unisex t-shirt;Navy Blue;4XL;81259;81226;;100;NS305CX_81259_81226
-NS305CX;Eco-friendly unisex t-shirt;Navy Blue;5XL;81259;81229;09/01/2026;150;NS305CX_81259_81229
+NS305CX;Eco-friendly unisex t-shirt;Navy Blue;5XL;81259;81229;12/01/2026;150;NS305CX_81259_81229
 NS305CX;Eco-friendly unisex t-shirt;Peacock Blue;3XL;81260;81225;30/07/2026;50;NS305CX_81260_81225
 NS305CX;Eco-friendly unisex t-shirt;Pineapple;3XL;81264;81225;09/01/2026;150;NS305CX_81264_81225
 NS305CX;Eco-friendly unisex t-shirt;Pineapple;4XL;81264;81226;09/01/2026;150;NS305CX_81264_81226
@@ -1238,7 +1241,7 @@ NS305CX;Eco-friendly unisex t-shirt;Wet Sand;3XL;88568;81225;30/06/2026;50;NS305
 NS305CX;Eco-friendly unisex t-shirt;Wet Sand;4XL;88568;81226;24/03/2026;50;NS305CX_88568_81226
 NS305CX;Eco-friendly unisex t-shirt;Wet Sand;4XL;88568;81226;29/05/2026;50;NS305CX_88568_81226
 NS305CX;Eco-friendly unisex t-shirt;Forest Green;3XL;94180;81225;;400;NS305CX_94180_81225
-NS305X;Eco-friendly unisex t-shirt;White;3XL;81271;81224;09/01/2026;4100;NS305X_81271_81224
+NS305X;Eco-friendly unisex t-shirt;White;3XL;81271;81224;12/01/2026;4100;NS305X_81271_81224
 NS305X;Eco-friendly unisex t-shirt;White;4XL;81271;81227;09/01/2026;50;NS305X_81271_81227
 NS307;Eco-friendly kids’ t-shirt;White;2/4 years (2/4 ans);74617;74592;06/02/2026;200;NS307_74617_74592
 NS307;Eco-friendly kids’ t-shirt;White;2/4 years (2/4 ans);74617;74592;24/03/2026;150;NS307_74617_74592
@@ -1443,8 +1446,8 @@ NS308;Eco-friendly unisex oversize French Terry t-shirt;Ivory;L;85789;85785;29/0
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Ivory;XL;85789;85786;09/01/2026;1400;NS308_85789_85786
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Ivory;XL;85789;85786;29/05/2026;250;NS308_85789_85786
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Ivory;XXL;85789;85787;29/05/2026;325;NS308_85789_85787
-NS308;Eco-friendly unisex oversize French Terry t-shirt;Navy Blue;M;85790;85784;09/01/2026;800;NS308_85790_85784
-NS308;Eco-friendly unisex oversize French Terry t-shirt;Organic Khaki;M;85791;85784;09/01/2026;1600;NS308_85791_85784
+NS308;Eco-friendly unisex oversize French Terry t-shirt;Navy Blue;M;85790;85784;12/01/2026;800;NS308_85790_85784
+NS308;Eco-friendly unisex oversize French Terry t-shirt;Organic Khaki;M;85791;85784;12/01/2026;1600;NS308_85791_85784
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Organic Khaki;XL;85791;85786;09/01/2026;700;NS308_85791_85786
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Wet Sand;M;85792;85784;12/01/2026;800;NS308_85792_85784
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Wet Sand;L;85792;85785;12/01/2026;700;NS308_85792_85785
@@ -1463,7 +1466,7 @@ NS308;Eco-friendly unisex oversize French Terry t-shirt;Raw Natural;XS;94190;857
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Raw Natural;S;94190;85783;12/01/2026;2431;NS308_94190_85783
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Raw Natural;M;94190;85784;12/01/2026;4150;NS308_94190_85784
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Raw Natural;L;94190;85785;12/01/2026;3375;NS308_94190_85785
-NS308;Eco-friendly unisex oversize French Terry t-shirt;Raw Natural;XL;94190;85786;09/01/2026;1275;NS308_94190_85786
+NS308;Eco-friendly unisex oversize French Terry t-shirt;Raw Natural;XL;94190;85786;12/01/2026;1275;NS308_94190_85786
 NS308;Eco-friendly unisex oversize French Terry t-shirt;Raw Natural;XXL;94190;85787;09/01/2026;525;NS308_94190_85787
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Black;XS;89164;89160;27/04/2026;300;NS309_89164_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Black;XS;89164;89160;29/05/2026;100;NS309_89164_89160
@@ -1497,12 +1500,12 @@ NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Ivory;M;89165;89162;30/07/2
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Ivory;L;89165;89163;29/05/2026;200;NS309_89165_89163
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Ivory;L;89165;89163;30/06/2026;200;NS309_89165_89163
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Ivory;L;89165;89163;30/07/2026;350;NS309_89165_89163
-NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;XS;89166;89160;09/01/2026;350;NS309_89166_89160
+NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;XS;89166;89160;12/01/2026;350;NS309_89166_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;XS;89166;89160;27/04/2026;300;NS309_89166_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;XS;89166;89160;29/05/2026;250;NS309_89166_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;XS;89166;89160;30/06/2026;350;NS309_89166_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;XS;89166;89160;30/07/2026;200;NS309_89166_89160
-NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;S;89166;89161;09/01/2026;1050;NS309_89166_89161
+NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;S;89166;89161;12/01/2026;1050;NS309_89166_89161
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;S;89166;89161;27/04/2026;500;NS309_89166_89161
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;S;89166;89161;29/05/2026;450;NS309_89166_89161
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;S;89166;89161;30/06/2026;550;NS309_89166_89161
@@ -1517,17 +1520,17 @@ NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;L;89166;89163;27
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;L;89166;89163;29/05/2026;300;NS309_89166_89163
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;L;89166;89163;30/06/2026;200;NS309_89166_89163
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;Petal Rose;L;89166;89163;30/07/2026;350;NS309_89166_89163
-NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;XS;89167;89160;09/01/2026;550;NS309_89167_89160
+NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;XS;89167;89160;12/01/2026;550;NS309_89167_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;XS;89167;89160;27/04/2026;300;NS309_89167_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;XS;89167;89160;29/05/2026;300;NS309_89167_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;XS;89167;89160;30/06/2026;250;NS309_89167_89160
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;XS;89167;89160;30/07/2026;300;NS309_89167_89160
-NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;S;89167;89161;08/01/2026;750;NS309_89167_89161
+NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;S;89167;89161;12/01/2026;750;NS309_89167_89161
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;S;89167;89161;27/04/2026;900;NS309_89167_89161
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;S;89167;89161;29/05/2026;350;NS309_89167_89161
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;S;89167;89161;30/06/2026;450;NS309_89167_89161
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;S;89167;89161;30/07/2026;550;NS309_89167_89161
-NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;M;89167;89162;09/01/2026;1100;NS309_89167_89162
+NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;M;89167;89162;12/01/2026;1100;NS309_89167_89162
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;M;89167;89162;27/04/2026;600;NS309_89167_89162
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;M;89167;89162;29/05/2026;500;NS309_89167_89162
 NS309;Eco-friendly ladies' rolled-up sleeves t-shirt;White;M;89167;89162;30/06/2026;500;NS309_89167_89162
@@ -1655,7 +1658,7 @@ NS324;Eco-friendly ladies’ t-shirt;White;XL;74718;74703;09/01/2026;650;NS324_747
 NS324;Eco-friendly ladies’ t-shirt;White;XL;74718;74703;22/01/2026;400;NS324_74718_74703
 NS324;Eco-friendly ladies’ t-shirt;White;XL;74718;74703;24/03/2026;650;NS324_74718_74703
 NS324;Eco-friendly ladies’ t-shirt;White;XL;74718;74703;27/04/2026;350;NS324_74718_74703
-NS324;Eco-friendly ladies’ t-shirt;White;XXL;74718;74708;08/01/2026;400;NS324_74718_74708
+NS324;Eco-friendly ladies’ t-shirt;White;XXL;74718;74708;12/01/2026;400;NS324_74718_74708
 NS324;Eco-friendly ladies’ t-shirt;White;XXL;74718;74708;22/01/2026;200;NS324_74718_74708
 NS324;Eco-friendly ladies’ t-shirt;White;XXL;74718;74708;24/03/2026;450;NS324_74718_74708
 NS324C;Eco-friendly ladies’ t-shirt;Black;XS;74709;74692;12/01/2026;300;NS324C_74709_74692
@@ -1767,16 +1770,16 @@ NS324C;Eco-friendly ladies’ t-shirt;Sea Blue;M;88582;74698;29/05/2026;700;NS324C
 NS324C;Eco-friendly ladies’ t-shirt;Sea Blue;L;88582;74700;29/05/2026;350;NS324C_88582_74700
 NS324C;Eco-friendly ladies’ t-shirt;Sea Blue;XL;88582;74704;29/05/2026;50;NS324C_88582_74704
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;XS;88583;74692;29/05/2026;200;NS324C_88583_74692
-NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;S;88583;74694;08/01/2026;500;NS324C_88583_74694
+NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;S;88583;74694;12/01/2026;500;NS324C_88583_74694
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;S;88583;74694;22/01/2026;350;NS324C_88583_74694
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;S;88583;74694;29/05/2026;500;NS324C_88583_74694
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;M;88583;74698;09/01/2026;850;NS324C_88583_74698
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;M;88583;74698;22/01/2026;700;NS324C_88583_74698
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;M;88583;74698;29/05/2026;550;NS324C_88583_74698
-NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;L;88583;74700;08/01/2026;900;NS324C_88583_74700
+NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;L;88583;74700;12/01/2026;900;NS324C_88583_74700
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;L;88583;74700;22/01/2026;350;NS324C_88583_74700
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;L;88583;74700;29/05/2026;250;NS324C_88583_74700
-NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;XL;88583;74704;08/01/2026;150;NS324C_88583_74704
+NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;XL;88583;74704;12/01/2026;150;NS324C_88583_74704
 NS324C;Eco-friendly ladies’ t-shirt;Wet Sand;XL;88583;74704;22/01/2026;250;NS324C_88583_74704
 NS328;Eco-friendly ladies’ Terry Towel t-shirt;Almond Green;XS;86777;74732;13/02/2026;150;NS328_86777_74732
 NS328;Eco-friendly ladies’ Terry Towel t-shirt;Almond Green;S;86777;74733;13/02/2026;270;NS328_86777_74733
@@ -1958,6 +1961,7 @@ NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;XS;86209;74769;30/06/2026;10
 NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;S;86209;74770;29/05/2026;700;NS332_86209_74770
 NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;S;86209;74770;30/06/2026;700;NS332_86209_74770
 NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;S;86209;74770;30/07/2026;600;NS332_86209_74770
+NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;M;86209;74771;12/01/2026;350;NS332_86209_74771
 NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;M;86209;74771;29/05/2026;1000;NS332_86209_74771
 NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;M;86209;74771;30/06/2026;900;NS332_86209_74771
 NS332;Eco-friendly men’s oversize t-shirt;Iron Grey;M;86209;74771;30/07/2026;900;NS332_86209_74771
@@ -2286,7 +2290,7 @@ NS400AX;Eco-friendly unisex round neck sweatshirt;Moon Grey Heather;3XL;68720;68
 NS400C;Eco-friendly unisex round neck sweatshirt;Almond Green;L;68705;68690;09/01/2026;960;NS400C_68705_68690
 NS400C;Eco-friendly unisex round neck sweatshirt;Aquamarine;M;68709;68686;09/01/2026;480;NS400C_68709_68686
 NS400C;Eco-friendly unisex round neck sweatshirt;Aquamarine;L;68709;68690;09/01/2026;480;NS400C_68709_68690
-NS400C;Eco-friendly unisex round neck sweatshirt;Black;XXS;68710;68678;09/01/2026;980;NS400C_68710_68678
+NS400C;Eco-friendly unisex round neck sweatshirt;Black;XXS;68710;68678;12/01/2026;980;NS400C_68710_68678
 NS400C;Eco-friendly unisex round neck sweatshirt;Black;XS;68710;68680;12/01/2026;2875;NS400C_68710_68680
 NS400C;Eco-friendly unisex round neck sweatshirt;Black;S;68710;68684;12/01/2026;10575;NS400C_68710_68684
 NS400C;Eco-friendly unisex round neck sweatshirt;Black;L;68710;68690;12/01/2026;23106;NS400C_68710_68690
@@ -2338,7 +2342,7 @@ NS400C;Eco-friendly unisex round neck sweatshirt;Poppy Red;XL;81286;68692;09/01/
 NS400C;Eco-friendly unisex round neck sweatshirt;Poppy Red;XL;81286;68692;30/06/2026;80;NS400C_81286_68692
 NS400C;Eco-friendly unisex round neck sweatshirt;Raw Natural;XS;81289;68680;09/01/2026;400;NS400C_81289_68680
 NS400C;Eco-friendly unisex round neck sweatshirt;Raw Natural;S;81289;68684;12/01/2026;1278;NS400C_81289_68684
-NS400C;Eco-friendly unisex round neck sweatshirt;Sienna;M;81290;68686;08/01/2026;880;NS400C_81290_68686
+NS400C;Eco-friendly unisex round neck sweatshirt;Sienna;M;81290;68686;12/01/2026;880;NS400C_81290_68686
 NS400C;Eco-friendly unisex round neck sweatshirt;Dark camel;XXS;88600;68678;11/06/2026;80;NS400C_88600_68678
 NS400C;Eco-friendly unisex round neck sweatshirt;Dark camel;M;88600;68686;11/06/2026;760;NS400C_88600_68686
 NS400C;Eco-friendly unisex round neck sweatshirt;Dark camel;L;88600;68690;11/06/2026;620;NS400C_88600_68690
@@ -2351,7 +2355,7 @@ NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;M;88603;68686;11/0
 NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;M;88603;68686;30/06/2026;600;NS400C_88603_68686
 NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;L;88603;68690;11/06/2026;800;NS400C_88603_68690
 NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;L;88603;68690;30/06/2026;720;NS400C_88603_68690
-NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;XL;88603;68692;09/01/2026;340;NS400C_88603_68692
+NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;XL;88603;68692;12/01/2026;340;NS400C_88603_68692
 NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;XL;88603;68692;11/06/2026;80;NS400C_88603_68692
 NS400C;Eco-friendly unisex round neck sweatshirt;Forest Green;XL;88603;68692;30/06/2026;600;NS400C_88603_68692
 NS400C;Eco-friendly unisex round neck sweatshirt;Cherry Purple;M;88604;68686;09/01/2026;480;NS400C_88604_68686
@@ -2377,7 +2381,7 @@ NS400C;Eco-friendly unisex round neck sweatshirt;Sun Yellow;XL;94193;68692;27/04
 NS400CC;Eco-friendly unisex round neck sweatshirt;Cool Blue Heather;L;70252;70262;09/01/2026;400;NS400CC_70252_70262
 NS400CC;Eco-friendly unisex round neck sweatshirt;Navy Blue Heather;XL;70254;70264;12/01/2026;440;NS400CC_70254_70264
 NS400CX;Eco-friendly unisex round neck sweatshirt;Black;4XL;68711;68701;12/01/2026;300;NS400CX_68711_68701
-NS400CX;Eco-friendly unisex round neck sweatshirt;Organic Khaki;XXL;68724;68695;08/01/2026;200;NS400CX_68724_68695
+NS400CX;Eco-friendly unisex round neck sweatshirt;Organic Khaki;XXL;68724;68695;12/01/2026;200;NS400CX_68724_68695
 NS400CX;Eco-friendly unisex round neck sweatshirt;Organic Khaki;3XL;68724;68700;09/01/2026;100;NS400CX_68724_68700
 NS400CX;Eco-friendly unisex round neck sweatshirt;Mineral Grey;XXL;71123;68695;09/01/2026;80;NS400CX_71123_68695
 NS400CX;Eco-friendly unisex round neck sweatshirt;Navy Blue;XXL;71125;68695;12/01/2026;2000;NS400CX_71125_68695
@@ -2399,7 +2403,7 @@ NS400CX;Eco-friendly unisex round neck sweatshirt;Petal Rose;3XL;88608;68700;09/
 NS400CX;Eco-friendly unisex round neck sweatshirt;Sun Yellow;XXL;94194;68695;27/04/2026;900;NS400CX_94194_68695
 NS400CX;Eco-friendly unisex round neck sweatshirt;Sun Yellow;3XL;94194;68700;27/04/2026;360;NS400CX_94194_68700
 NS400X;Eco-friendly unisex round neck sweatshirt;Ivory;XXL;68719;68697;12/01/2026;1140;NS400X_68719_68697
-NS401;Eco-friendly unisex hooded sweatshirt;Ivory;XXS;68774;68734;09/01/2026;1560;NS401_68774_68734
+NS401;Eco-friendly unisex hooded sweatshirt;Ivory;XXS;68774;68734;12/01/2026;1560;NS401_68774_68734
 NS401;Eco-friendly unisex hooded sweatshirt;Ivory;XS;68774;68735;12/01/2026;2742;NS401_68774_68735
 NS401;Eco-friendly unisex hooded sweatshirt;Ivory;M;68774;68741;12/01/2026;13502;NS401_68774_68741
 NS401;Eco-friendly unisex hooded sweatshirt;Ivory;L;68774;68746;12/01/2026;14388;NS401_68774_68746
@@ -2429,12 +2433,12 @@ NS401AX;Eco-friendly unisex hooded sweatshirt;Moon Grey Heather;XXL;68776;68750;
 NS401AX;Eco-friendly unisex hooded sweatshirt;Moon Grey Heather;3XL;68776;68754;09/01/2026;60;NS401AX_68776_68754
 NS401C;Eco-friendly unisex hooded sweatshirt;Almond Green;XXS;68759;68732;09/01/2026;140;NS401C_68759_68732
 NS401C;Eco-friendly unisex hooded sweatshirt;Almond Green;XS;68759;68736;09/01/2026;540;NS401C_68759_68736
-NS401C;Eco-friendly unisex hooded sweatshirt;Aquamarine;XS;68763;68736;08/01/2026;220;NS401C_68763_68736
-NS401C;Eco-friendly unisex hooded sweatshirt;Aquamarine;S;68763;68738;09/01/2026;1060;NS401C_68763_68738
+NS401C;Eco-friendly unisex hooded sweatshirt;Aquamarine;XS;68763;68736;12/01/2026;220;NS401C_68763_68736
+NS401C;Eco-friendly unisex hooded sweatshirt;Aquamarine;S;68763;68738;12/01/2026;1060;NS401C_68763_68738
 NS401C;Eco-friendly unisex hooded sweatshirt;Aquamarine;M;68763;68742;09/01/2026;2300;NS401C_68763_68742
 NS401C;Eco-friendly unisex hooded sweatshirt;Aquamarine;L;68763;68744;09/01/2026;2180;NS401C_68763_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Aquamarine;XL;68763;68747;09/01/2026;840;NS401C_68763_68747
-NS401C;Eco-friendly unisex hooded sweatshirt;Black;XXS;68766;68732;08/01/2026;4880;NS401C_68766_68732
+NS401C;Eco-friendly unisex hooded sweatshirt;Black;XXS;68766;68732;12/01/2026;4880;NS401C_68766_68732
 NS401C;Eco-friendly unisex hooded sweatshirt;Black;XS;68766;68736;12/01/2026;5960;NS401C_68766_68736
 NS401C;Eco-friendly unisex hooded sweatshirt;Dark Cherry;XXS;68770;68732;11/06/2026;60;NS401C_68770_68732
 NS401C;Eco-friendly unisex hooded sweatshirt;Dark Cherry;XS;68770;68736;11/06/2026;260;NS401C_68770_68736
@@ -2447,7 +2451,7 @@ NS401C;Eco-friendly unisex hooded sweatshirt;Hibiscus Red;S;68771;68738;09/01/20
 NS401C;Eco-friendly unisex hooded sweatshirt;Hibiscus Red;M;68771;68742;12/01/2026;1669;NS401C_68771_68742
 NS401C;Eco-friendly unisex hooded sweatshirt;Hibiscus Red;L;68771;68744;12/01/2026;1900;NS401C_68771_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Hibiscus Red;XL;68771;68747;09/01/2026;600;NS401C_68771_68747
-NS401C;Eco-friendly unisex hooded sweatshirt;Organic Khaki;XXS;68779;68732;08/01/2026;40;NS401C_68779_68732
+NS401C;Eco-friendly unisex hooded sweatshirt;Organic Khaki;XXS;68779;68732;12/01/2026;40;NS401C_68779_68732
 NS401C;Eco-friendly unisex hooded sweatshirt;Organic Khaki;XS;68779;68736;09/01/2026;160;NS401C_68779_68736
 NS401C;Eco-friendly unisex hooded sweatshirt;Peacock Blue;XS;68782;68736;27/04/2026;120;NS401C_68782_68736
 NS401C;Eco-friendly unisex hooded sweatshirt;Peacock Blue;S;68782;68738;12/01/2026;320;NS401C_68782_68738
@@ -2503,7 +2507,7 @@ NS401C;Eco-friendly unisex hooded sweatshirt;Adriatic Blue;M;80040;68742;12/03/2
 NS401C;Eco-friendly unisex hooded sweatshirt;Adriatic Blue;L;80040;68744;12/01/2026;380;NS401C_80040_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Adriatic Blue;L;80040;68744;12/03/2026;920;NS401C_80040_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Adriatic Blue;XL;80040;68747;12/03/2026;660;NS401C_80040_68747
-NS401C;Eco-friendly unisex hooded sweatshirt;Curcuma;S;80043;68738;09/01/2026;240;NS401C_80043_68738
+NS401C;Eco-friendly unisex hooded sweatshirt;Curcuma;S;80043;68738;12/01/2026;240;NS401C_80043_68738
 NS401C;Eco-friendly unisex hooded sweatshirt;Curcuma;M;80043;68742;12/01/2026;886;NS401C_80043_68742
 NS401C;Eco-friendly unisex hooded sweatshirt;Curcuma;L;80043;68744;12/01/2026;914;NS401C_80043_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Curcuma;XL;80043;68747;12/01/2026;465;NS401C_80043_68747
@@ -2531,7 +2535,7 @@ NS401C;Eco-friendly unisex hooded sweatshirt;Raw Natural;L;80053;68744;12/01/202
 NS401C;Eco-friendly unisex hooded sweatshirt;Raw Natural;L;80053;68744;12/03/2026;800;NS401C_80053_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Raw Natural;L;80053;68744;27/04/2026;1460;NS401C_80053_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Raw Natural;XL;80053;68747;27/04/2026;520;NS401C_80053_68747
-NS401C;Eco-friendly unisex hooded sweatshirt;Sienna;L;80054;68744;08/01/2026;320;NS401C_80054_68744
+NS401C;Eco-friendly unisex hooded sweatshirt;Sienna;L;80054;68744;12/01/2026;320;NS401C_80054_68744
 NS401C;Eco-friendly unisex hooded sweatshirt;Antique Rose;XS;84773;68736;12/01/2026;100;NS401C_84773_68736
 NS401C;Eco-friendly unisex hooded sweatshirt;Antique Rose;S;84773;68738;12/01/2026;940;NS401C_84773_68738
 NS401C;Eco-friendly unisex hooded sweatshirt;Antique Rose;M;84773;68742;12/01/2026;1740;NS401C_84773_68742
@@ -2566,7 +2570,7 @@ NS401C;Eco-friendly unisex hooded sweatshirt;Forest Green;XL;88620;68747;12/03/2
 NS401C;Eco-friendly unisex hooded sweatshirt;Forest Green;XL;88620;68747;27/04/2026;300;NS401C_88620_68747
 NS401C;Eco-friendly unisex hooded sweatshirt;Forest Green;XL;88620;68747;11/06/2026;340;NS401C_88620_68747
 NS401C;Eco-friendly unisex hooded sweatshirt;Forest Green;XL;88620;68747;30/06/2026;200;NS401C_88620_68747
-NS401C;Eco-friendly unisex hooded sweatshirt;Paprika;M;88622;68742;09/01/2026;320;NS401C_88622_68742
+NS401C;Eco-friendly unisex hooded sweatshirt;Paprika;M;88622;68742;12/01/2026;320;NS401C_88622_68742
 NS401C;Eco-friendly unisex hooded sweatshirt;Petal Rose;S;88625;68738;12/01/2026;640;NS401C_88625_68738
 NS401C;Eco-friendly unisex hooded sweatshirt;Petal Rose;M;88625;68742;09/01/2026;960;NS401C_88625_68742
 NS401C;Eco-friendly unisex hooded sweatshirt;Sea Blue;S;88626;68738;27/04/2026;60;NS401C_88626_68738
@@ -2594,8 +2598,8 @@ NS401CC;Eco-friendly unisex hooded sweatshirt;Navy Blue Heather;L;70282;70290;12
 NS401CC;Eco-friendly unisex hooded sweatshirt;Navy Blue Heather;XL;70282;70292;12/01/2026;960;NS401CC_70282_70292
 NS401CX;Eco-friendly unisex hooded sweatshirt;Almond Green;3XL;68760;68753;09/01/2026;60;NS401CX_68760_68753
 NS401CX;Eco-friendly unisex hooded sweatshirt;Aquamarine;XXL;68764;68752;09/01/2026;260;NS401CX_68764_68752
-NS401CX;Eco-friendly unisex hooded sweatshirt;Aquamarine;3XL;68764;68753;08/01/2026;100;NS401CX_68764_68753
-NS401CX;Eco-friendly unisex hooded sweatshirt;Aquamarine;4XL;68764;68758;08/01/2026;40;NS401CX_68764_68758
+NS401CX;Eco-friendly unisex hooded sweatshirt;Aquamarine;3XL;68764;68753;12/01/2026;100;NS401CX_68764_68753
+NS401CX;Eco-friendly unisex hooded sweatshirt;Aquamarine;4XL;68764;68758;12/01/2026;40;NS401CX_68764_68758
 NS401CX;Eco-friendly unisex hooded sweatshirt;Black;XXL;68765;68752;12/01/2026;4240;NS401CX_68765_68752
 NS401CX;Eco-friendly unisex hooded sweatshirt;Black;3XL;68765;68753;12/01/2026;2301;NS401CX_68765_68753
 NS401CX;Eco-friendly unisex hooded sweatshirt;Black;4XL;68765;68758;12/01/2026;1397;NS401CX_68765_68758
@@ -2662,7 +2666,7 @@ NS401CX;Eco-friendly unisex hooded sweatshirt;Sun Yellow;3XL;94196;68753;27/04/2
 NS401CX;Eco-friendly unisex hooded sweatshirt;Sun Yellow;4XL;94196;68758;12/01/2026;132;NS401CX_94196_68758
 NS401X;Eco-friendly unisex hooded sweatshirt;Ivory;XXL;68773;68751;12/01/2026;3670;NS401X_68773_68751
 NS401X;Eco-friendly unisex hooded sweatshirt;Ivory;XXL;68773;68751;27/04/2026;1040;NS401X_68773_68751
-NS401X;Eco-friendly unisex hooded sweatshirt;Ivory;3XL;68773;68755;08/01/2026;1460;NS401X_68773_68755
+NS401X;Eco-friendly unisex hooded sweatshirt;Ivory;3XL;68773;68755;12/01/2026;1460;NS401X_68773_68755
 NS401X;Eco-friendly unisex hooded sweatshirt;Ivory;3XL;68773;68755;27/04/2026;100;NS401X_68773_68755
 NS401X;Eco-friendly unisex hooded sweatshirt;Ivory;4XL;68773;68757;27/04/2026;400;NS401X_68773_68757
 NS401X;Eco-friendly unisex hooded sweatshirt;White;XXL;88628;68751;11/06/2026;40;NS401X_88628_68751
@@ -2811,6 +2815,7 @@ NS407C;Eco-friendly unisex oversize round neck sweatshirt;Black;XL;74896;74890;3
 NS407C;Eco-friendly unisex oversize round neck sweatshirt;Black;XXL;74896;74893;26/02/2026;220;NS407C_74896_74893
 NS407C;Eco-friendly unisex oversize round neck sweatshirt;Black;XXL;74896;74893;30/06/2026;200;NS407C_74896_74893
 NS407C;Eco-friendly unisex oversize round neck sweatshirt;Brook Green;S;74897;74885;12/01/2026;458;NS407C_74897_74885
+NS407C;Eco-friendly unisex oversize round neck sweatshirt;Brook Green;M;74897;74886;12/01/2026;460;NS407C_74897_74886
 NS407C;Eco-friendly unisex oversize round neck sweatshirt;Driftwood;S;74899;74885;30/03/2026;300;NS407C_74899_74885
 NS407C;Eco-friendly unisex oversize round neck sweatshirt;Driftwood;M;74899;74886;30/03/2026;460;NS407C_74899_74886
 NS407C;Eco-friendly unisex oversize round neck sweatshirt;Driftwood;L;74899;74889;30/03/2026;500;NS407C_74899_74889
@@ -2860,7 +2865,7 @@ NS408;Eco-friendly unisex oversize hooded sweatshirt;Ivory;M;74924;74910;12/01/2
 NS408;Eco-friendly unisex oversize hooded sweatshirt;Ivory;M;74924;74910;30/06/2026;1000;NS408_74924_74910
 NS408;Eco-friendly unisex oversize hooded sweatshirt;Ivory;L;74924;74911;12/01/2026;2621;NS408_74924_74911
 NS408;Eco-friendly unisex oversize hooded sweatshirt;Ivory;L;74924;74911;30/06/2026;400;NS408_74924_74911
-NS408;Eco-friendly unisex oversize hooded sweatshirt;Ivory;XL;74924;74914;09/01/2026;1280;NS408_74924_74914
+NS408;Eco-friendly unisex oversize hooded sweatshirt;Ivory;XL;74924;74914;12/01/2026;1280;NS408_74924_74914
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;S;74919;74908;12/01/2026;2297;NS408C_74919_74908
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;S;74919;74908;30/03/2026;200;NS408C_74919_74908
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;M;74919;74909;30/03/2026;1240;NS408C_74919_74909
@@ -2869,12 +2874,13 @@ NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;XL;74919;74913;12/01
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;XL;74919;74913;30/03/2026;600;NS408C_74919_74913
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;XXL;74919;74916;12/01/2026;820;NS408C_74919_74916
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;XXL;74919;74916;30/03/2026;300;NS408C_74919_74916
-NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;3XL;74919;74917;08/01/2026;200;NS408C_74919_74917
+NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;3XL;74919;74917;12/01/2026;200;NS408C_74919_74917
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Black;3XL;74919;74917;30/03/2026;240;NS408C_74919_74917
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;XS;74920;74905;09/01/2026;400;NS408C_74920_74905
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;S;74920;74908;12/01/2026;943;NS408C_74920_74908
-NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;M;74920;74909;09/01/2026;960;NS408C_74920_74909
+NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;M;74920;74909;12/01/2026;960;NS408C_74920_74909
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;L;74920;74912;12/01/2026;960;NS408C_74920_74912
+NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;XL;74920;74913;12/01/2026;500;NS408C_74920_74913
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;XXL;74920;74916;09/01/2026;220;NS408C_74920_74916
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Brook Green;3XL;74920;74917;09/01/2026;60;NS408C_74920_74917
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Burnt Brick;XS;74921;74905;09/01/2026;100;NS408C_74921_74905
@@ -2888,19 +2894,19 @@ NS408C;Eco-friendly unisex oversize hooded sweatshirt;Iron Grey;M;74923;74909;12
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Iron Grey;L;74923;74912;12/01/2026;1000;NS408C_74923_74912
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Iron Grey;XL;74923;74913;12/01/2026;920;NS408C_74923_74913
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Iron Grey;XXL;74923;74916;09/01/2026;20;NS408C_74923_74916
-NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;S;74925;74908;08/01/2026;300;NS408C_74925_74908
+NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;S;74925;74908;12/01/2026;300;NS408C_74925_74908
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;S;74925;74908;30/03/2026;400;NS408C_74925_74908
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;S;74925;74908;30/06/2026;200;NS408C_74925_74908
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;M;74925;74909;12/01/2026;520;NS408C_74925_74909
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;M;74925;74909;30/03/2026;800;NS408C_74925_74909
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;M;74925;74909;30/06/2026;400;NS408C_74925_74909
-NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;L;74925;74912;09/01/2026;400;NS408C_74925_74912
+NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;L;74925;74912;12/01/2026;400;NS408C_74925_74912
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;L;74925;74912;30/03/2026;740;NS408C_74925_74912
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;L;74925;74912;30/06/2026;500;NS408C_74925_74912
-NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XL;74925;74913;08/01/2026;360;NS408C_74925_74913
+NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XL;74925;74913;12/01/2026;360;NS408C_74925_74913
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XL;74925;74913;30/03/2026;400;NS408C_74925_74913
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XL;74925;74913;30/06/2026;300;NS408C_74925_74913
-NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XXL;74925;74916;08/01/2026;180;NS408C_74925_74916
+NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XXL;74925;74916;12/01/2026;180;NS408C_74925_74916
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XXL;74925;74916;30/03/2026;60;NS408C_74925_74916
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;XXL;74925;74916;30/06/2026;200;NS408C_74925_74916
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;3XL;74925;74917;09/01/2026;100;NS408C_74925_74917
@@ -2913,7 +2919,7 @@ NS408C;Eco-friendly unisex oversize hooded sweatshirt;Jade Green;XL;88653;74913;
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Jade Green;XXL;88653;74916;12/01/2026;400;NS408C_88653_74916
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Jade Green;3XL;88653;74917;09/01/2026;180;NS408C_88653_74917
 NS408C;Eco-friendly unisex oversize hooded sweatshirt;Raw Natural;M;88657;74909;12/01/2026;180;NS408C_88657_74909
-NS409;Eco-friendly ladies’ French Terry full zip hooded sweatshirt;Ivory;S;81312;81304;09/01/2026;220;NS409_81312_81304
+NS409;Eco-friendly ladies’ French Terry full zip hooded sweatshirt;Ivory;S;81312;81304;12/01/2026;220;NS409_81312_81304
 NS409C;Eco-friendly ladies’ French Terry full zip hooded sweatshirt;Jade Green;XS;88660;81302;09/01/2026;300;NS409C_88660_81302
 NS409C;Eco-friendly ladies’ French Terry full zip hooded sweatshirt;Jade Green;S;88660;81303;09/01/2026;300;NS409C_88660_81303
 NS409C;Eco-friendly ladies’ French Terry full zip hooded sweatshirt;Jade Green;M;88660;81306;09/01/2026;380;NS409C_88660_81306
@@ -3065,7 +3071,7 @@ NS441;Eco-friendly unisex oversize hooded sweatshirt;Black;S;89213;89207;09/01/2
 NS441;Eco-friendly unisex oversize hooded sweatshirt;Black;M;89213;89208;09/01/2026;480;NS441_89213_89208
 NS441;Eco-friendly unisex oversize hooded sweatshirt;Black;L;89213;89209;09/01/2026;15;NS441_89213_89209
 NS441;Eco-friendly unisex oversize hooded sweatshirt;Ivory;S;89214;89207;09/01/2026;240;NS441_89214_89207
-NS441;Eco-friendly unisex oversize hooded sweatshirt;Ivory;L;89214;89209;08/01/2026;240;NS441_89214_89209
+NS441;Eco-friendly unisex oversize hooded sweatshirt;Ivory;L;89214;89209;12/01/2026;240;NS441_89214_89209
 NS441;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;S;89215;89207;09/01/2026;240;NS441_89215_89207
 NS441;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;M;89215;89208;09/01/2026;480;NS441_89215_89208
 NS441;Eco-friendly unisex oversize hooded sweatshirt;Navy Blue;L;89215;89209;09/01/2026;480;NS441_89215_89209
@@ -3077,7 +3083,7 @@ NS443A;Eco-friendly unisex round neck sweatshirt;Ivory;L;95971;95956;09/01/2026;
 NS443A;Eco-friendly unisex round neck sweatshirt;Ivory;XXL;95971;95962;09/01/2026;200;NS443A_95971_95962
 NS443C;Eco-friendly unisex round neck sweatshirt;Black;XS;95970;95945;12/01/2026;180;NS443C_95970_95945
 NS443C;Eco-friendly unisex round neck sweatshirt;Black;M;95970;95951;12/01/2026;1520;NS443C_95970_95951
-NS443C;Eco-friendly unisex round neck sweatshirt;Black;XXL;95970;95961;08/01/2026;240;NS443C_95970_95961
+NS443C;Eco-friendly unisex round neck sweatshirt;Black;XXL;95970;95961;12/01/2026;240;NS443C_95970_95961
 NS444;Eco-friendly unisex hooded sweatshirt;White;XXS;96015;95979;09/01/2026;80;NS444_96015_95979
 NS444;Eco-friendly unisex hooded sweatshirt;White;XS;96015;95984;09/01/2026;320;NS444_96015_95984
 NS444;Eco-friendly unisex hooded sweatshirt;White;S;96015;95985;09/01/2026;1120;NS444_96015_95985
@@ -3104,11 +3110,11 @@ NS444AX;Eco-friendly unisex hooded sweatshirt;Ivory;4XL;96009;96004;09/01/2026;4
 NS444AX;Eco-friendly unisex hooded sweatshirt;Moon Grey Heather;3XL;96010;96000;09/01/2026;40;NS444AX_96010_96000
 NS444C;Eco-friendly unisex hooded sweatshirt;Black;XXS;96007;95980;09/01/2026;100;NS444C_96007_95980
 NS444C;Eco-friendly unisex hooded sweatshirt;Black;XS;96007;95982;12/01/2026;917;NS444C_96007_95982
-NS444C;Eco-friendly unisex hooded sweatshirt;Black;S;96007;95986;08/01/2026;2720;NS444C_96007_95986
+NS444C;Eco-friendly unisex hooded sweatshirt;Black;S;96007;95986;12/01/2026;2720;NS444C_96007_95986
 NS444C;Eco-friendly unisex hooded sweatshirt;Black;M;96007;95988;09/01/2026;2960;NS444C_96007_95988
-NS444C;Eco-friendly unisex hooded sweatshirt;Black;L;96007;95992;08/01/2026;3380;NS444C_96007_95992
-NS444C;Eco-friendly unisex hooded sweatshirt;Black;XL;96007;95994;08/01/2026;2300;NS444C_96007_95994
-NS444C;Eco-friendly unisex hooded sweatshirt;Black;XXL;96007;95998;08/01/2026;940;NS444C_96007_95998
+NS444C;Eco-friendly unisex hooded sweatshirt;Black;L;96007;95992;12/01/2026;3380;NS444C_96007_95992
+NS444C;Eco-friendly unisex hooded sweatshirt;Black;XL;96007;95994;12/01/2026;2300;NS444C_96007_95994
+NS444C;Eco-friendly unisex hooded sweatshirt;Black;XXL;96007;95998;12/01/2026;940;NS444C_96007_95998
 NS444C;Eco-friendly unisex hooded sweatshirt;Navy Blue;XXS;96012;95980;09/01/2026;100;NS444C_96012_95980
 NS444C;Eco-friendly unisex hooded sweatshirt;Navy Blue;XS;96012;95982;09/01/2026;200;NS444C_96012_95982
 NS444C;Eco-friendly unisex hooded sweatshirt;Navy Blue;S;96012;95986;09/01/2026;1140;NS444C_96012_95986
@@ -3153,7 +3159,6 @@ NS510;Eco-friendly men's jersey shirt;Pastel Apricot;M;75125;75116;09/01/2026;80
 NS510;Eco-friendly men's jersey shirt;Pastel Apricot;L;75125;75117;09/01/2026;675;NS510_75125_75117
 NS510;Eco-friendly men's jersey shirt;White;L;75128;75117;12/01/2026;740;NS510_75128_75117
 NS6005;Eco-friendly men’s lightweight bodywarmer;Black;S;75200;75193;12/01/2026;134;NS6005_75200_75193
-NS6005;Eco-friendly men’s lightweight bodywarmer;Black;M;75200;75194;12/01/2026;636;NS6005_75200_75194
 NS6005;Eco-friendly men’s lightweight bodywarmer;Black;XL;75200;75196;12/01/2026;336;NS6005_75200_75196
 NS6005;Eco-friendly men’s lightweight bodywarmer;Black;3XL;75200;75198;12/01/2026;128;NS6005_75200_75198
 NS6005;Eco-friendly men’s lightweight bodywarmer;Black;4XL;75200;75199;12/01/2026;150;NS6005_75200_75199
@@ -3162,7 +3167,6 @@ NS6005;Eco-friendly men’s lightweight bodywarmer;Driftwood;M;75201;75194;12/01/2
 NS6005;Eco-friendly men’s lightweight bodywarmer;Driftwood;L;75201;75195;12/01/2026;546;NS6005_75201_75195
 NS6005;Eco-friendly men’s lightweight bodywarmer;Driftwood;XL;75201;75196;12/01/2026;367;NS6005_75201_75196
 NS6005;Eco-friendly men’s lightweight bodywarmer;Driftwood;3XL;75201;75198;09/01/2026;45;NS6005_75201_75198
-NS6005;Eco-friendly men’s lightweight bodywarmer;Navy Blue;S;75204;75193;12/01/2026;258;NS6005_75204_75193
 NS6005;Eco-friendly men’s lightweight bodywarmer;Navy Blue;M;75204;75194;12/01/2026;441;NS6005_75204_75194
 NS6005;Eco-friendly men’s lightweight bodywarmer;Navy Blue;L;75204;75195;12/01/2026;723;NS6005_75204_75195
 NS6005;Eco-friendly men’s lightweight bodywarmer;Navy Blue;XL;75204;75196;12/01/2026;660;NS6005_75204_75196
@@ -3173,23 +3177,21 @@ NS6005;Eco-friendly men’s lightweight bodywarmer;Organic Khaki;M;75205;75194;12/
 NS6005;Eco-friendly men’s lightweight bodywarmer;Organic Khaki;L;75205;75195;12/01/2026;544;NS6005_75205_75195
 NS6005;Eco-friendly men’s lightweight bodywarmer;Organic Khaki;XL;75205;75196;12/01/2026;279;NS6005_75205_75196
 NS6005;Eco-friendly men’s lightweight bodywarmer;Organic Khaki;3XL;75205;75198;12/01/2026;68;NS6005_75205_75198
-NS6006;Eco-friendly ladies’ lightweight bodywarmer;Black;S;75212;75207;12/01/2026;335;NS6006_75212_75207
-NS6006;Eco-friendly ladies’ lightweight bodywarmer;Black;M;75212;75208;12/01/2026;546;NS6006_75212_75208
 NS6006;Eco-friendly ladies’ lightweight bodywarmer;Black;L;75212;75209;12/01/2026;765;NS6006_75212_75209
 NS6006;Eco-friendly ladies’ lightweight bodywarmer;Black;XL;75212;75210;12/01/2026;405;NS6006_75212_75210
-NS6006;Eco-friendly ladies’ lightweight bodywarmer;Driftwood;XL;75213;75210;08/01/2026;60;NS6006_75213_75210
+NS6006;Eco-friendly ladies’ lightweight bodywarmer;Driftwood;XL;75213;75210;12/01/2026;60;NS6006_75213_75210
 NS6006;Eco-friendly ladies’ lightweight bodywarmer;Navy Blue;M;75216;75208;12/01/2026;93;NS6006_75216_75208
 NS6006;Eco-friendly ladies’ lightweight bodywarmer;Navy Blue;L;75216;75209;12/01/2026;136;NS6006_75216_75209
 NS6006;Eco-friendly ladies’ lightweight bodywarmer;Navy Blue;XXL;75216;75211;09/01/2026;45;NS6006_75216_75211
-NS601;Eco-friendly unisex wind-breaker jacket;Black;L;68874;68870;08/01/2026;375;NS601_68874_68870
-NS601;Eco-friendly unisex wind-breaker jacket;Navy Blue;M;68875;68869;09/01/2026;700;NS601_68875_68869
+NS601;Eco-friendly unisex wind-breaker jacket;Black;L;68874;68870;12/01/2026;375;NS601_68874_68870
+NS601;Eco-friendly unisex wind-breaker jacket;Navy Blue;M;68875;68869;12/01/2026;700;NS601_68875_68869
 NS601;Eco-friendly unisex wind-breaker jacket;Navy Blue;L;68875;68870;09/01/2026;700;NS601_68875_68870
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed black;S;84815;84809;30/01/2026;255;NS603_84815_84809
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed black;M;84815;84810;30/01/2026;345;NS603_84815_84810
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed black;L;84815;84811;30/01/2026;600;NS603_84815_84811
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed black;XL;84815;84812;30/01/2026;270;NS603_84815_84812
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed black;XXL;84815;84813;30/01/2026;90;NS603_84815_84813
-NS603;Eco-friendly men’s washed effect corduroy jacket;Washed Dark Camel;S;84816;84809;09/01/2026;150;NS603_84816_84809
+NS603;Eco-friendly men’s washed effect corduroy jacket;Washed Dark Camel;S;84816;84809;12/01/2026;150;NS603_84816_84809
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed Dark Camel;M;84816;84810;12/01/2026;210;NS603_84816_84810
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed Dark Camel;L;84816;84811;12/01/2026;720;NS603_84816_84811
 NS603;Eco-friendly men’s washed effect corduroy jacket;Washed Dark Camel;XXL;84816;84813;12/01/2026;105;NS603_84816_84813
@@ -3226,6 +3228,7 @@ NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;S;85883;85876;13/02
 NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;S;85883;85876;11/08/2026;2400;NS604_85883_85876
 NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;M;85883;85877;13/02/2026;1324;NS604_85883_85877
 NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;M;85883;85877;11/08/2026;4400;NS604_85883_85877
+NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;L;85883;85878;12/01/2026;523;NS604_85883_85878
 NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;L;85883;85878;13/02/2026;1380;NS604_85883_85878
 NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;L;85883;85878;11/08/2026;2850;NS604_85883_85878
 NS604;Eco-friendly unisex sherpa jacket;Wet Sand / Driftwood;XL;85883;85879;13/02/2026;805;NS604_85883_85879
@@ -3260,8 +3263,9 @@ NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Black;XXL;90100;90098;1
 NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Black;3XL;90100;90099;11/08/2026;100;NS609_90100_90099
 NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;XS;90101;90093;11/08/2026;416;NS609_90101_90093
 NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;S;90101;90094;11/08/2026;920;NS609_90101_90094
+NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;M;90101;90095;12/01/2026;90;NS609_90101_90095
 NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;M;90101;90095;11/08/2026;1660;NS609_90101_90095
-NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;L;90101;90096;11/08/2026;1778;NS609_90101_90096
+NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;L;90101;90096;11/08/2026;1773;NS609_90101_90096
 NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;XL;90101;90097;11/08/2026;1119;NS609_90101_90097
 NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;XXL;90101;90098;11/08/2026;368;NS609_90101_90098
 NS609;Eco-friendly unisex sherpa-lined waterproof jacket;Navy Blue;3XL;90101;90099;11/08/2026;220;NS609_90101_90099
@@ -3358,7 +3362,7 @@ NS615;Eco-friendly unisex waterproof jacket;Navy Blue;XL;75277;75272;12/01/2026;
 NS615;Eco-friendly unisex waterproof jacket;Navy Blue;XL;75277;75272;22/01/2026;405;NS615_75277_75272
 NS615;Eco-friendly unisex waterproof jacket;Navy Blue;XXL;75277;75273;12/01/2026;103;NS615_75277_75273
 NS615;Eco-friendly unisex waterproof jacket;Navy Blue;XXL;75277;75273;22/01/2026;130;NS615_75277_75273
-NS615;Eco-friendly unisex waterproof jacket;Navy Blue;3XL;75277;75274;08/01/2026;60;NS615_75277_75274
+NS615;Eco-friendly unisex waterproof jacket;Navy Blue;3XL;75277;75274;12/01/2026;60;NS615_75277_75274
 NS615;Eco-friendly unisex waterproof jacket;Navy Blue;3XL;75277;75274;22/01/2026;55;NS615_75277_75274
 NS615;Eco-friendly unisex waterproof jacket;Organic Khaki;S;75278;75269;12/01/2026;210;NS615_75278_75269
 NS615;Eco-friendly unisex waterproof jacket;Organic Khaki;M;75278;75270;12/01/2026;390;NS615_75278_75270
@@ -3449,7 +3453,7 @@ NS623;Eco-friendly unisex padded twill bodywarmer with teddy collar;Organic Khak
 NS624;Eco-friendly unisex sherpa bodywarmer;Black;XXS;90111;90103;22/01/2026;89;NS624_90111_90103
 NS624;Eco-friendly unisex sherpa bodywarmer;Black;XS;90111;90104;22/01/2026;75;NS624_90111_90104
 NS624;Eco-friendly unisex sherpa bodywarmer;Black;XS;90111;90104;11/08/2026;500;NS624_90111_90104
-NS624;Eco-friendly unisex sherpa bodywarmer;Black;S;90111;90105;22/01/2026;90;NS624_90111_90105
+NS624;Eco-friendly unisex sherpa bodywarmer;Black;S;90111;90105;22/01/2026;89;NS624_90111_90105
 NS624;Eco-friendly unisex sherpa bodywarmer;Black;S;90111;90105;11/08/2026;1400;NS624_90111_90105
 NS624;Eco-friendly unisex sherpa bodywarmer;Black;M;90111;90106;22/01/2026;165;NS624_90111_90106
 NS624;Eco-friendly unisex sherpa bodywarmer;Black;M;90111;90106;11/08/2026;2150;NS624_90111_90106
@@ -3731,4 +3735,4 @@ NS739;Eco-friendly ladies’ chino bermuda shorts;Wet Sand;12 UK (38 FR);75467;754
 NS739;Eco-friendly ladies’ chino bermuda shorts;Wet Sand;14 UK (40 FR);75467;75456;20/02/2026;280;NS739_75467_75456
 NS739;Eco-friendly ladies’ chino bermuda shorts;Wet Sand;16 UK (42 FR);75467;75457;20/02/2026;100;NS739_75467_75457
 NS739;Eco-friendly ladies’ chino bermuda shorts;Wet Sand;18 UK (44 FR);75467;75458;20/02/2026;56;NS739_75467_75458
-NS911;Eco-friendly men’s chunky knit jumper;Toffee;S;75540;75532;08/01/2026;180;NS911_75540_75532
+NS911;Eco-friendly men’s chunky knit jumper;Toffee;S;75540;75532;12/01/2026;180;NS911_75540_75532
